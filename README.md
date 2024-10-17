@@ -20,6 +20,6 @@ npm run invalidate
 ```
 
 # Important
-To build the site, you also need [**fenn**ecs](https://github.com/outfox/fennecs) installed in the same parent directory as this project.
+To build the site, you also need [**fenn**ecs](https://github.com/outfox/fennecs) checked out in the same parent directory as this project, i.e. the relative path `../fennecs`.
 
 This is necessary because the site includes source code snippets from fennecs during static sitegeneration.
