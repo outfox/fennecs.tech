@@ -1,7 +1,7 @@
 # fennecs ECS documentation
-This is a vitepress project to create the website and documentation as seen on [fennecs.tech](https://fennecs.tech)
+This is a [VitePress](https://vitepress.dev) static site generator to create the website and documentation seen on [fennecs.tech](https://fennecs.tech)
 
-A GitHub action will integrate all changes made to `main` and deploy a new website.
+A GitHub action will integrate all changes made to `main` and deploy a new website to the appropriate S3 bucket.
 
 ## Developing
 ```bash
@@ -19,3 +19,7 @@ npm run upload
 npm run invalidate
 ```
 
+# Important
+To build the site, you also need [**fenn**ecs](https://github.com/outfox/fennecs) installed in the same parent directory as this project.
+
+This is necessary because the site includes source code snippets from fennecs during static sitegeneration.

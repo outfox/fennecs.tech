@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout www repo
+    - name: Checkout website repo
       uses: actions/checkout@v4
       with:
-        path: fennecs-www
+        path: website
 
     - name: Checkout fennecs
       uses: actions/checkout@v4
@@ -35,21 +35,21 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd fennecs-www
+        cd website
         npm install
 
     - name: Build VitePress
       run: |
-        cd fennecs-www
+        cd website
         npm run build
 
     - name: Deploy to S3
       run: |
-        cd fennecs-www
+        cd website
         npm run upload
 
     - name: Invalidate CloudFront cache
       run: |
-        cd fennecs-www
+        cd website
         npm run invalidate
       
