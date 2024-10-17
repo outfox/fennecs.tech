@@ -34,22 +34,22 @@ jobs:
         aws-region: eu-central-1
 
     - name: Install dependencies
-      run: 
+      run: |
         cd fennecs-www
         npm install
 
     - name: Build VitePress
-      run: 
+      run: |
         cd fennecs-www
         npm run build
 
     - name: Deploy to S3
-      run: 
+      run: |
         cd fennecs-www
         npm run upload
 
     - name: Invalidate CloudFront cache
-      run: 
+      run: |
         cd fennecs-www
         npm run invalidate
       
