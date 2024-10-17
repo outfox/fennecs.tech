@@ -26,14 +26,11 @@ jobs:
       with:
         node-version: '20.x'
 
-    - name: Change directory
-      run: cd fennecs-www
-
     - name: Install dependencies
-      run: npm install
+      run: cd fennecs-www && npm install
 
     - name: Build VitePress site
-      run: npm run build
+      run: cd fennecs-www && npm run build
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
