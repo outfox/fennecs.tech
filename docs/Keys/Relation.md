@@ -16,7 +16,7 @@ Relations are **unidirectional**, so the Target doesn't "know" it is being relat
 But despawning the Target of one or more Relations <u>will remove</u> these Relation Components from any Entities that reference it. See the ending of the [Kill Bill](/cookbook/appetizers/KillBill.md) appetizer for a demonstration.
 :::
 
-Relations can be backed by any type (reference or value types). The backing data is only shared if the component is a [shared component](Shareables.md) itself.
+Relations can be backed by any type (reference or value types). The backing data is only shared if the component is a [shared component](/docs/Components/Shareables.md) itself.
 
 The target of a relation must be [Alive](/docs/Entities/Liveness.md).
 

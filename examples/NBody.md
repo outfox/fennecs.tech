@@ -27,7 +27,7 @@ Case in point here is not raw performance (although the basic GDscript-driven li
 
 ::: code-group
 
-<<< ../../demos/godot/N-Body/NBodyDemo.cs#Showcase [Showcase]
+<<< ../../fennecs/demos/godot/N-Body/NBodyDemo.cs#Showcase [Showcase]
 
 :::
 

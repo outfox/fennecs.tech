@@ -33,6 +33,6 @@ I'm sure you already see that nothing can go wrong! Let's get snapping!
 
 
 ::: code-group
-<<< ../../../cookbook/Thanos.cs {cs:line-numbers} [Implementation]
-<<< ../../../cookbook/Thanos.output.txt{txt} [Output]
+<<< ../../../fennecs/cookbook/Thanos.cs {cs:line-numbers} [Implementation]
+<<< ../../../fennecs/cookbook/Thanos.output.txt{txt} [Output]
 :::

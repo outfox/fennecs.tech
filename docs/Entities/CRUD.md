@@ -6,7 +6,7 @@ outline: [1, 2]
 
 # Create, Read, Update, Delete
 
-`fennecs.Entity` is a builder struct that combines its associated `fennecs.World` and `fennecs.Identity` to form an easily usable access pattern which exposes operations to add, remove, and read [Components](/docs/Components/) , [Links](/docs/Components/Link.md) , and [Relations](/docs/Components/Relation.md). You can also conveniently Despawn the Entity.
+`fennecs.Entity` is a builder struct that combines its associated `fennecs.World` and `fennecs.Identity` to form an easily usable access pattern which exposes operations to add, remove, and read [Components](/docs/Components/) , [Links](/docs/Keys/Link.md) , and [Relations](/docs/Keys/Relation.md). You can also conveniently Despawn the Entity.
 
 
 The component data is accessed and processed in bulk through [Queries](/docs/Queries/), a typical way that ECS provide composable functionality.
