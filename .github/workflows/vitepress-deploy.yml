@@ -12,17 +12,22 @@ jobs:
     steps:
     - name: Checkout www repo
       uses: actions/checkout@v4
+      with:
+        path: fennecs-www
 
     - name: Checkout fennecs
       uses: actions/checkout@v4
       with:
         repository: outfox/fennecs
-        path: ../fennecs
+        path: fennecs
 
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20.x'
+
+    - name: Change directory
+      run: cd fennecs-www
 
     - name: Install dependencies
       run: npm ci
