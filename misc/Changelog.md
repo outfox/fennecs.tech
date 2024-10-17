@@ -45,8 +45,11 @@ Here, there be ~~dragons~~ more foxes. *What did you expect?*
 > **fenn**ecs will remain in Beta until version 1.0.0, which is expected in Q1 2025. Breaking API changes as well as bugs are likely to occur without warning in these beta builds. 
 > You are nonetheless encouraged to try **fenn**ecs out, play around and experiment with the package freely; our resident foxes aim to keep it it as useful and stable as possible! Please report issues and feedback on the [GitHub Issues](https://github.com/outfox/fennecs/issues) board.
 
-## Upcoming Changes
-### soon(tm)
+## Upcoming
+*Collapsed for brevity and likely changes before release.*
+
+<details>
+
 - Stream runners return their own Stream, allowing chaining operations.
 - Chunked Component Storage (global, or maybe each World may have its own chunk size)
 - `Match.Object` becomes internal / deprecated, use `Link.Any` instead.
@@ -56,8 +59,6 @@ Here, there be ~~dragons~~ more foxes. *What did you expect?*
 - `Stream.Raw(EntitySpanAction action)` will be added to allow for processing all Entities in a Stream at maximum performance. 
 ...
 
-## Version 0.6.0-beta
-### Breaking Changes
 - There's now a hard limit of Worlds per Domain/Process.
 > *"256 Worlds should be enough for anyone!"*  
 > :neofox_flop_blep: ~ Fox Gates, circa 2024
@@ -110,6 +111,7 @@ var found2 = mystream.FirstOrDefault(((Entity, float pos) tuple) => tuple.pos > 
 var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Item1;
 ```
 :::
+
 - Fixed [Issue #20](https://github.com/outfox/fennecs/issues/20) `Stream<...>.Truncate(int)` has been removed (there was no semantically clear way implement it, and it was forwarding to the Underlying Query without applying filters). Instead, just use `Stream.Query.Truncate(int)` if you want to cut down on the number of entities in a Stream, but Filtering logic will not be applied (since it operates on the underlying Query, not the Stream). You can still use `Stream<...>.Despawn()` to Despawn all entities from the Stream according to its current filter state.
 - Entities now intrinsically know the World they belong to. This allows for safe Cross-World-Relations.
 - Entity structs now are just 64 bits (very tight).
@@ -121,6 +123,7 @@ var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Ite
   - `UniformEntityAction<in U>` - process one Entity with a uniform parameter
   - `EntitySpanAction` - process a Span of Entities
   - `UniformEntitySpanAction<in U>` - process a Span of Entities with a uniform parameter
+</details>
 
 
 ## Version 0.5.11-beta
