@@ -1,5 +1,6 @@
 ---
 title: Glossary
+order: 2
 ---
 
 ![a stylized fennec fox in a huge archive with of stacks of papers](https://fennecs.tech/img/fennec-glossary.png)

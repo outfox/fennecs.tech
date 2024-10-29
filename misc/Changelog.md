@@ -1,6 +1,6 @@
 ﻿---
-title: Release Notes
-order: 2
+title: Changelog
+order: 1
 outline: [2,2]
 
 head:
@@ -38,7 +38,7 @@ head:
 
 ![a stylized fox shattering red and green polygons surrounded by source code](https://fennecs.tech/img/fennec-changelog.png)
 
-# Release Notes
+# Change Log & Release Notes
 Here, there be ~~dragons~~ more foxes. *What did you expect?*
 
 > [!CAUTION] BETA NOTICE
@@ -124,6 +124,54 @@ var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Ite
   - `EntitySpanAction` - process a Span of Entities
   - `UniformEntitySpanAction<in U>` - process a Span of Entities with a uniform parameter
 </details>
+
+## Version 0.5.12-beta
+### Breaking Changes
+- `EntityComponentAction` Delegates now take the Entity as an `in` parameter. 
+
+```csharp
+public delegate void EntityComponentAction<C0>(in Entity entity, ref C0 comp0);
+public delegate void EntityComponentAction<C0, C1>(in Entity entity, ref C0 comp0, ref C1 comp1);
+//etc.
+
+public delegate void UniformEntityComponentAction<in U, C0>(U uniform, in Entity entity, ref C0 comp0);
+public delegate void UniformEntityComponentAction<in U, C0, C1>(U uniform, in Entity entity, ref C0 comp0, ref C1 comp1);
+//etc.
+```
+
+### Upgrading
+Add the `in` keyword to your runner methods' or lambdas' parameters.
+
+::: code-group
+```csharp  [old api] 🕸️
+stream.For((Entity e, ref Component c) => {...});
+```
+```csharp [new api] ✨
+stream.For((in Entity e, ref Component c) => {...});
+```
+:::
+
+
+- `fennecs.World` itself is no longer a Query (and subsequently, no longer supports Batch operations). Use `World.All` for this purpose.
+
+- Fixed: `World` implements the new `fennecs.Streamable` interface, so `World.Stream<...>` works as it did before, though it now returns the correct entity counts (instead of the world's entity count).
+
+### New Features
+
+- Instance Property `fennecs.World.All`, also known as the universal query, contains all entities of a World.
+```cs
+// Add this component to all entities in the world, will throw if not able.
+myWorld.All.Add<int>(123); 
+
+// BatchConfict rules apply the same way as for any "user" query.
+var batch = myWorld.All.Batch(Batch.AddConflict.Replace);
+batch.Add<int>(123); // adds or replaces this component
+batch.Submit();
+
+// Despawns all Entities
+myworld.All.Despawn(); 
+```
+
 
 
 ## Version 0.5.11-beta
