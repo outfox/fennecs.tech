@@ -125,6 +125,10 @@ var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Ite
   - `UniformEntitySpanAction<in U>` - process a Span of Entities with a uniform parameter
 </details>
 
+## Version 0.5.14-beta
+
+- Merged [PR #29](https://github.com/outfox/fennecs/pull/29), fixing a significant corruption issue due to a Bug in `Join<...>.Iterate()`. Huge thanks to [Lilith Schier](https://github.com/Naalunth)!
+
 ## Version 0.5.13-beta
 
 - Implemented [Issue #22](https://github.com/outfox/fennecs/issues/22) Adding typeless .Has() and .Get() methods for entity. 
@@ -135,7 +139,7 @@ var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Ite
     /// Typeless API: Check if the entity/entities has a Component of a specific backing type, with optional match expression for relations.
     /// </summary>
     /// <remarks>
-    /// ⚠️ To differentiate from its overloads for Object Links, use default or Match.Plain for match, or Wildcards like Match.Any, Match.Plain, etc.
+    /// ⚠️ To differentiate from its overloads for Object Links, use default or Match.Plain for match, or Wildcards like Entity.Any, Match.Any, etc.
     /// </remarks>
     public bool Has(Type type, Match match);
     
