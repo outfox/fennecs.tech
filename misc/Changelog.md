@@ -127,7 +127,7 @@ var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Ite
 
 ## Version 0.5.13-beta
 
-- Implemented [Issue #22](https://github.com/outfox/fennecs/issues/23) Adding typeless .Has() and .Get() methods for entity. 
+- Implemented [Issue #22](https://github.com/outfox/fennecs/issues/22) Adding typeless .Has() and .Get() methods for entity. 
 
 `Entity` now implements `IAddRemoveBoxed`with the following methods:
 ```cs
