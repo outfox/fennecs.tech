@@ -125,6 +125,58 @@ var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Ite
   - `UniformEntitySpanAction<in U>` - process a Span of Entities with a uniform parameter
 </details>
 
+## Version 0.5.13-beta
+
+- Implemented [Issue #22](https://github.com/outfox/fennecs/issues/23) Adding typeless .Has() and .Get() methods for entity. 
+
+`Entity` now implements `IAddRemoveBoxed`with the following methods:
+```cs
+    /// <summary>
+    /// Typeless API: Check if the entity/entities has a Component of a specific backing type, with optional match expression for relations.
+    /// </summary>
+    /// <remarks>
+    /// ⚠️ To differentiate from its overloads for Object Links, use default or Match.Plain for match, or Wildcards like Match.Any, Match.Plain, etc.
+    /// </remarks>
+    public bool Has(Type type, Match match);
+    
+    /// <summary>
+    /// Boxes the value of a Component of a specific type, with optional match expression for relations.
+    /// </summary>
+    /// <param name="type">backing type of the component</param>
+    /// <param name="value">boxed component value, or null if the entity does not have a component of that type</param>
+    /// <param name="match">optional match expression for relations</param>
+    /// <returns>true if the entity has a component of that type</returns>
+    /// <remarks>Semantically does not support wildcards! (must identify a single specific component)</remarks>
+    public bool Get([MaybeNullWhen(false)] out object value, Type type, Match match = default);
+    
+    /// <summary>
+    /// Boxes the value of a Component of a specific type, with optional match expression for relations.
+    /// </summary>
+    /// <returns>boxed component value, or null if the entity does not have a component of that type</returns>
+    public object? Get(Type type, Match match = default) => Get(out var value, type, match) ? value : null;
+    
+    /// <summary>
+    /// 'Typelessly' sets the value of a Component of a specific type, with optional match expression for relations.
+    /// The component type will be the type that value.GetType() returns!
+    /// </summary>
+    /// <param name="value">reference type or boxed component value</param>
+    /// <param name="match">optional match expression for relations</param>
+    /// <remarks>Semantically does not support wildcards! (must identify a single specific component)</remarks>
+    /// <throws><see cref="InvalidOperationException"/>if trying to add an already existing component or
+    /// <see cref="ArgumentException"/>if match is a wildcard</throws>
+    public void Set(object value, Match match = default);
+    
+    /// <summary>
+    /// Removes the given component by type and optional match expression.
+    /// </summary>
+    /// <param name="type">backing type of the component</param>
+    /// <param name="match">optional match expression for relations</param>
+    /// <throws><see cref="InvalidOperationException"/>if trying to clear a non-existing component</throws>
+    public Entity Clear(Type type, Match match = default);
+
+```
+
+
 ## Version 0.5.12-beta
 ### Breaking Changes
 - `EntityComponentAction` Delegates now take the Entity as an `in` parameter. 
@@ -171,7 +223,6 @@ batch.Submit();
 // Despawns all Entities
 myworld.All.Despawn(); 
 ```
-
 
 
 ## Version 0.5.11-beta
