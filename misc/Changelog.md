@@ -39,7 +39,7 @@ head:
 ![a stylized fox shattering red and green polygons surrounded by source code](https://fennecs.tech/img/fennec-changelog.png)
 
 # Change Log & Release Notes
-Here, there be ~~dragons~~ more foxes. *What did you expect?*
+Here be ~~dragons~~ more foxes. *What did you expect?*
 
 > [!CAUTION] BETA NOTICE
 > **fenn**ecs will remain in Beta until version 1.0.0, which is expected in Q1 2025. Breaking API changes as well as bugs are likely to occur without warning in these beta builds. 
@@ -223,7 +223,6 @@ batch.Submit();
 // Despawns all Entities
 myworld.All.Despawn(); 
 ```
-
 
 ## Version 0.5.11-beta
 - Fixed [Issue #23](https://github.com/outfox/fennecs/issues/23) Data Integrity Issue Following Despawn. Thanks to [Penny](https://github.com/PennyMew) for the Issue and PR to fix it!
