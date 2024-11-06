@@ -11,7 +11,7 @@ Here's a list of planned and speculative developments coming in the future.
 
 For detailed feature breakdowns and progress, visit:
 
-# 🔗[Projects on GitHub](https://github.com/outfox/fennecs/projects)
+# 🔗[Projects Status Board on GitHub](https://github.com/orgs/outfox/projects/1)
 
 Feedback and questions are always appreciated, please submit them on GitHub / Discord:
 | What? | Where? |
