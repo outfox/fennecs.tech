@@ -9,9 +9,9 @@ order: 3
 
 Here's a list of planned and speculative developments coming in the future.
 
-For details, visit:
+For detailed feature breakdowns and progress, visit:
 
-# 🔗[Projects on Github](https://github.com/orgs/outfox/projects)
+# 🔗[Projects on GitHub](https://github.com/outfox/fennecs/projects)
 
 Feedback and questions are always appreciated, please submit them on GitHub / Discord:
 | What? | Where? |
