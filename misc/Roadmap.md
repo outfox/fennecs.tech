@@ -7,7 +7,11 @@ order: 3
 
 # The future of **fenn**ecs
 
-Here's a list of planned and speculative features coming in the future.
+Here's a list of planned and speculative developments coming in the future.
+
+For details, visit:
+
+# 🔗[Projects on Github](https://github.com/orgs/outfox/projects)
 
 Feedback and questions are always appreciated, please submit them on GitHub / Discord:
 | What? | Where? |
@@ -17,7 +21,7 @@ Feedback and questions are always appreciated, please submit them on GitHub / Di
 
 Pull Requests especially welcome (please open an issue first to discuss the feature or bugfix you're planning to work on so your work gets the appreciation and attention it deserves).
 
-### Q4 2024
+### Q1 2025
 ::: details `1.0.0` Stable Release 
 - 🎉 End of Beta
 - *(maybe)* Code-Signed NuGet Package
@@ -43,30 +47,25 @@ Pull Requests especially welcome (please open an issue first to discuss the feat
   - (more? others?)
 :::
 
+### Q4 2024
 ::: details `0.7.0+` Benchmark Suite (🦊help wanted)
 - internal set of benchmarks to ensure performance and memory usage are in line with expectations, and to prove good practices
 - comparisons of **fenn**ecs with some other ECS libraries, likely as extended PR to [Doraku's Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark)
 :::
 
-
-### Q3 2024
-::: details `0.6.0+` Customizable Query & Archetype Garbage Collection
-A set of specific or user-defined Interfaces that Component Types can "implement" to allow for nouanced garbage collection strategies.
-
-**Concepts & Ideas**
-- `Ephemeral` Interface for Components whose Archetypes should compact after each structural change.
-- `Rare` Interface for Components that are only very rarely added, allowing a more conservative memory allocation strategy (instead of doubling).
-- `World.SetGarbageCollectionStrategy<I>` to set the strategy for a given Interface.
+::: details `0.6.x` Arithmetic SIMD Methods
+A set of specific methods to allow for SIMD-accelerated arithmetic operations on Component data. Inspired by [TensorPrimitives](https://learn.microsoft.com/en-us/dotnet/api/system.numerics.tensors.tensorprimitives?view=net-9.0).
 :::
 
-::: details `0.6.0+` Arithmetic SIMD Methods
-A set of specific methods to allow for SIMD-accelerated arithmetic operations on Component data.
+::: details `0.6.0` Events and API Restructuring
+https://github.com/orgs/outfox/projects/1
 :::
 
-::: details `0.5.0+` Dog Fooding Phase + Enhanced Beta
+
+### ~~Q3 2024~~
+::: details `0.5.0+` ~~Dog Fooding Phase + Enhanced Beta~~
 - systematic internal and external beta testing
 - using the library in a [real-world project](https://jupiter.blue)
-- additional 1st party demos
 - iteration on examples and tutorials
 - strict examination of API surface for usability, elegance, and consistency
 - consulting with subject matter experts for feedback
