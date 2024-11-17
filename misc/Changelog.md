@@ -66,6 +66,9 @@ Here be ~~dragons~~ more foxes. *What did you expect?*
 ### Deprecations
 - `Comp<...>.Plain` is deprecated. Switch to using `Comp<T>.Data` and `Comp<T>.Data<K>` instead.
 
+### Behavior Changes
+- `Stream<>.Batch(...) now heeds the Stream's filter state (instead of always operating on the underylingQuery).
+
 ### New Features
 - ✨Void Components!✨ <br>*(true zero-storage components)*
   - `Comp<T>.Tag` <br>
