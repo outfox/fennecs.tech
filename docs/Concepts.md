@@ -3,6 +3,8 @@ title: Concepts
 order: 0
 outline: [2,2]
 
+prev: using fennecs;
+
 head:
   - - meta
     - property: og:title
