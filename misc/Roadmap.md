@@ -21,7 +21,7 @@ Feedback and questions are always appreciated, please submit them on GitHub / Di
 
 Pull Requests especially welcome (please open an issue first to discuss the feature or bugfix you're planning to work on so your work gets the appreciation and attention it deserves).
 
-### Q1 2025
+### When it's Done 
 ::: details `1.0.0` Stable Release 
 - 🎉 End of Beta
 - *(maybe)* Code-Signed NuGet Package
@@ -47,12 +47,13 @@ Pull Requests especially welcome (please open an issue first to discuss the feat
   - (more? others?)
 :::
 
-### Q4 2024
+### Q2 2025
 ::: details `0.7.0+` Benchmark Suite (🦊help wanted)
 - internal set of benchmarks to ensure performance and memory usage are in line with expectations, and to prove good practices
 - comparisons of **fenn**ecs with some other ECS libraries, likely as extended PR to [Doraku's Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark)
 :::
 
+### Q1 2025
 ::: details `0.6.x` Arithmetic SIMD Methods
 A set of specific methods to allow for SIMD-accelerated arithmetic operations on Component data. Inspired by [TensorPrimitives](https://learn.microsoft.com/en-us/dotnet/api/system.numerics.tensors.tensorprimitives?view=net-9.0).
 :::

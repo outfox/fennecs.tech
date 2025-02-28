@@ -36,7 +36,17 @@ stream.For(Time.Delta, (float dt, ref Vector3 velocity) => {
 });
 ```
 
-```cs [soon: (🚀 700% faster with SIMD)]
+```cs [🚀 700% faster with SIMD]
+
+var stream = world.Stream<Vector3>();
+
+stream.Raw(Time.Delta, (float dt, Memory<Vector3> velocities) => 
+{
+    var velocity = MemoryMarshal.Cast<Component1, float>(velocities.Span);
+
+        TensorPrimitives.MultiplyAdd(c2I, 1f/60.0f, c1I, c1I);
+      velocity.Y -= 9.81f * dt;
+});
 var simd = world.Query<Vector3>().SIMD();
 // this is still under hot & messy development right now 😅
 simd.Add(
