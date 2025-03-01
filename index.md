@@ -58,7 +58,7 @@ head:
 ## Ok, what the fox? *Another ECS?!*
 # :neofox_facepalm: We know... oh, _we know._    
 
-In a tiny nutshell, we hope that this one hits different.
+In a tiny nutshell, we hope that this one hits different. Straight up:
 
 ###  **fenn**ecs is an archetype-based [🔗Entity-Component System](https://github.com/SanderMertens/ecs-faq). 
 
