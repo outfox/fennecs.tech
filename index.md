@@ -58,4 +58,14 @@ head:
 ## Ok, what the fox? *Another ECS?!*
 # :neofox_facepalm: We know... oh, _we know._    
 
-In a tiny nutshell, **fenn**ecs is an archetype-based [🔗Entity-Component System (Wikipedia)](https://en.wikipedia.org/wiki/Entity_component_system). ECS is an architecture and Design Pattern most commonly used in **Game Development** and **Simulation Software**. Our cheeky little library lives up to its name by all at once being **small, clever, quick,** *and <u>full of</u>* **trash-tier puns!**
+In a tiny nutshell, we think that perhaps this one *hits different*. But first things first:
+
+###  **fenn**ecs is an archetype-based [🔗Entity-Component System](https://github.com/SanderMertens/ecs-faq). 
+
+ECS is an architecture and Design Pattern most commonly used in **Game Development** and **Simulation Software**, applying various principles of **Data-Oriented Design** to leverage the capabilities of modern CPUs.
+
+**fenn**ecs happily adheres to its design principles of reducing boilerplate and cognitive load first and foremost. We maximize performance second, and then go all in on flexibility and expressiveness with several novel approaches of structuring and querying component data. 
+
+Our cheeky little library lives up to its name by all at once being **small, clever, quick,** *and <u>full of</u>* **trash-tier puns!**
+
+### Come on in and check out the [~~fox~~, uhh, docs](/docs/index.md)!
