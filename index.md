@@ -64,8 +64,8 @@ In a tiny nutshell, let's be real - this one just hits different. Straight up:
 
 ECS is an architecture and Design Pattern most commonly used in **Game Development** and **Simulation Software**, applying various principles of **Data-Oriented Design** to leverage the capabilities of modern CPUs.
 
-**fenn**ecs strictly adheres to its design principles of reducing boilerplate and cognitive load first and foremost. We then explore innovative approaches to structuring and querying component data without sacrificing flexibility.
+**fenn**ecs strictly adheres to its design principles of reducing boilerplate and cognitive load first and foremost. Second we explore innovative approaches to structuring and querying component data without sacrificing flexibility.
 
-Despite its primary focus, you may discover that **fenn**ecs still punches way above its weight in terms of performance. Our cheeky little library lives up to its name by all at once being **small, clever, quick,** *and <u>full of</u>* **delightfully terrible puns!**
+Despite this primary focus, you may discover that **fenn**ecs still punches way above its weight in terms of performance. Our cheeky little library lives up to its name by all at once being **small, clever, quick,** *and <u>full of</u>* **delightfully terrible puns!**
 
 ### Come on in, check out the [~~fox~~, uhh, docs](/docs/index.md)!
