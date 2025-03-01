@@ -68,4 +68,4 @@ ECS is an architecture and Design Pattern most commonly used in **Game Developme
 
 Our cheeky little library lives up to its name by all at once being **small, clever, quick,** *and <u>full of</u>* **trash-tier puns!**
 
-### Come on in and check out the [~~fox~~, uhh, docs](/docs/index.md)!
+### Come on in, check out the [~~fox~~, uhh, docs](/docs/index.md)!
