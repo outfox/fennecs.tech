@@ -22,12 +22,14 @@ hero:
       link: https://github.com/outfox/fennecs
 
 features:
+  - title: The ECS that ♥️ you back!
+    details: A modern, open source, pure C# <a href="https://github.com/SanderMertens/ecs-faq" target="_blank">🔗Entity-Component System</a> for amazing games and simulations!
   - title: Minimal Boilerplate.
-    details: Pure C#, right out of the box. Plays nice with game engines. <i>Make choices, not compromises!</i>
-  - title: Free, Flexible, Relational!
-    details: A powerful Link & Relation system <i>puts you in control</i> of how your Entities and Objects relate. 
-  - title: Zero Dependencies. Zero Codegen. 
-    details: <br/> . . . . . 💢
+    details: Told ya! <a href="https://en.wikipedia.org/wiki/Data-oriented_design" target="_blank">🔗Data-Oriented Design</a> can be slick and simple after all! <br/><i>Make choices, not compromises!</i>
+  - title: Fun, Fast, Flexible!
+    details: Its clever Link & Relation system <i>puts you in control</i> of how your Entities and Objects relate. 
+  - title: Zero Code Generation.<br>Zero Dependencies.<br/>Zero Fox given.
+    details: . . . . . 💢
 
 head:
   - - meta
@@ -35,7 +37,7 @@ head:
       content: fennecs — tiny ECS
   - - meta
     - name: description
-      content: A tiny, fast, modern C# Entity-Component System for games and simulations!
+      content: A free, fast, foxy C# Entity-Component System for games and simulations!
   - - meta
     - property: og:type
       content: website
