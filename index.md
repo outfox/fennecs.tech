@@ -22,12 +22,13 @@ hero:
       link: https://github.com/outfox/fennecs
 
 features:
-  - title: The ECS that ♥️ you back!
-    details: A modern, open source, pure C# <a href="https://github.com/SanderMertens/ecs-faq" target="_blank">🔗Entity-Component System</a> for amazing games and simulations!
+  - title: The ECS that ♥️'s you back!
+    details: A fresh, foxy, & free open source C# Entity Component System, for amazing games and simulations!
   - title: Minimal Boilerplate.
-    details: Told ya! <a href="https://en.wikipedia.org/wiki/Data-oriented_design" target="_blank">🔗Data-Oriented Design</a> can be slick and simple after all! <br/><i>Make choices, not compromises!</i>
+    details: 
+      <b>fenn</b>ecs is highly expressive, yet <i>least verbose</i> among its peers.<br/> Make choices, not compromises!
   - title: Fun, Fast, Flexible!
-    details: Its clever Link & Relation system <i>puts you in control</i> of how your Entities and Objects relate. 
+    details: Clever component and relation queries offer you the best of both composition <i>and</i> inheritance!
   - title: Zero Code Generation.<br>Zero Dependencies.<br/>Zero Fox given.
     details: . . . . . 💢
 
@@ -58,14 +59,17 @@ head:
 ## Ok, what the fox? *Another ECS?!*
 # :neofox_facepalm: We know... oh, _we know._    
 
-In a tiny nutshell, we hope that this one hits different. Straight up:
+Yet, in the tiniest of nutshells: 
+> _... this one hits different._
 
-###  **fenn**ecs is an archetype-based [🔗Entity-Component System](https://github.com/SanderMertens/ecs-faq). 
+**fenn**ecs is an archetype-based [C# Entity-Component System](https://github.com/SanderMertens/ecs-faq) library. It targets [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) and is distributed as a prebuilt [nuget package](http://nuget.org/packages/fennecs) or in source code on [GitHub](https://github.com/outfox/fennecs). The broader term [ECS](https://github.com/SanderMertens/ecs-faq?tab=readme-ov-file#what-is-ecs) describes a family of architectures and design patterns most commonly used in **Game Development** and **Simulation Software**, applying various principles of **Data-Oriented Design** to leverage the capabilities of modern CPUs.
 
-ECS is an architecture and Design Pattern most commonly used in **Game Development** and **Simulation Software**, applying various principles of **Data-Oriented Design** to leverage the capabilities of modern CPUs.
+**fenn**ecs strictly adheres to its design principles of reducing boilerplate and cognitive load first and foremost. Second, we explore innovative approaches to structuring and querying component data without sacrificing flexibility. 
 
-**fenn**ecs strictly adheres to its design principles of reducing boilerplate and cognitive load first and foremost. Second we explore innovative approaches to structuring and querying component data without sacrificing flexibility.
+Furthermore, **fenn**ecs allows developers to mix and match the advantages of procedural, functional, and SIMD programming, as well as to follow both compositional and inheritance-based approaches to domain modeling. 
 
-Despite this primary focus, you may discover that **fenn**ecs still punches way above its weight in terms of performance. Our cheeky little library lives up to its name by all at once being **small, clever, quick,** *and <u>full of</u>* **delightfully terrible puns!**
+Doing all this with literally *zero dependency baggage* sets **fenn**ecs apart from many bulkier, more rigid, or more opinionated libraries.
 
-### Come on in, check out the [~~fox~~, uhh, docs](/docs/index.md)!
+### Come on in, check out ~~[the fox](/docs/index.md)~~ [the docs!](/docs/index.md)
+
+Beyond its goals for simplicity and flexibility, you may discover that **fenn**ecs still punches way above its weight in terms of performance. Our cheeky little library lives up to its name by all at once being **small, clever, quick,** *and full of* **delightfully terrible puns!**

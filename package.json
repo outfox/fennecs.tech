@@ -10,7 +10,10 @@
     "upload": "aws s3 sync s3 s3://fennecs.tech --delete && aws s3 sync .vitepress/dist s3://fennecs.tech",
     "invalidate": "aws cloudfront create-invalidation --distribution-id E12V3ZFP8BEESL --paths \"/*\"",
     "deploy": "npm run build && npm run upload && npm run invalidate",
-    "preview": "vitepress preview ."
+    "preview": "vitepress preview .",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
   },
   "keywords": [
     "documentation"
@@ -19,7 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "markdown-it": "^14.1.0",
-    "vitepress": "^1.4.1",
-    "vitepress-sidebar": "^1.27.1"
+    "vitepress": "^1.6.3",
+    "vitepress-sidebar": "^1.31.1"
   }
 }

@@ -4,18 +4,9 @@ import { neofoxPlugin } from './plugin-neofox';
 import { hyperlinkPlugin } from './plugin-hyperlink';
 
 // https://vitepress.dev/reference/site-config
-
 export default defineConfig({
-  lang: 'en-US',
-  title: "fennecs — tiny ECS",
-  description: "fennecs ...the tiny, tiny, high-energy Entity-Component System!",
-
-  markdown: {
-    config: (md) => {
-      md.use(neofoxPlugin, {});
-      md.use(hyperlinkPlugin, {});
-    }
-  },
+  title: "fennecs.tech",
+  description: "tiny C# ECS",
 
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
@@ -43,13 +34,20 @@ export default defineConfig({
     ['meta', { property: "author", content: "⤜outfox⤏" }],
   ],
 
+    
+  markdown: {
+    config: (md) => {
+      md.use(neofoxPlugin, {});
+      md.use(hyperlinkPlugin, {});
+    }
+  },
+
 
   themeConfig: {
-    logo: 'https://fennecs.tech/img/fennecs-logo-small.svg',
+    // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Documentation', link: '/docs/index' },
-      { text: 'Discord', link: 'https://discord.gg/Bfx74WcVXW' },
+      { text: 'Examples', link: '/markdown-examples' }
     ],
 
     footer: {
@@ -57,8 +55,7 @@ export default defineConfig({
       copyright: '<b>fenn</b>ecs is made with love & foxes, copyright © 2025 <a href="https://github.com/outfox/fennecs/graphs/contributors"> its contributors</a>'
     },
 
-    sidebar: generateSidebar([
-      {
+    sidebar: generateSidebar([{
         sortMenusByFrontmatterOrder: true,
         useFolderLinkFromIndexFile: true,
         useTitleFromFrontmatter: true,
@@ -66,16 +63,13 @@ export default defineConfig({
         documentRootPath: '/',
         scanStartPath: '/',
         resolvePath: '/',
-        excludeFiles: ['nuget.md'],
         includeRootIndexFile: false,
         collapseDepth: 1,
-        excludeFolders: [".", "node_modules", "dist", "public", "src", "vitepress", "vitepress-sidebar"],
       }
     ]),
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/outfox/fennecs/' },
-      { icon: 'discord', link: 'https://discord.gg/Bfx74WcVXW' },
+      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ],
-  },
+  }
 })
