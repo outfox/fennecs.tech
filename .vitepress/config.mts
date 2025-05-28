@@ -70,7 +70,8 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/outfox/fennecs' },
-      { icon: 'discord', link: 'https://discord.gg/Bfx74WcVXW' }
+      { icon: 'discord', link: 'https://discord.gg/Bfx74WcVXW' },
+      { icon: 'download', link: 'https://www.nuget.org/packages/fennecs/' }      
     ],
   }
 })
