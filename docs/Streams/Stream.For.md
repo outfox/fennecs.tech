@@ -53,8 +53,7 @@ myStream.For(
 
 ### Syntax... with Entity!
 
-Sometimes you want to know about the Entity that you're working on. Usually to make structural changes to it.
-It can be passed in as the first parameter, which must be an `in` parameter.
+Sometimes you need to know about the Entities that you're working on, often to add/remove components (or despawn) them. Each Entity is passed in as the first reference parameter, which must use the `in` keyword.
 
 ::: code-group
 ```cs [For(...) plain]
