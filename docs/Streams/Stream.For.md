@@ -1,29 +1,20 @@
 ---
-title: For
+title: 🥇For
 order: 1
 ---
 
-# Flexible Query Workloads
+# FOR: Flexible Query Workloads
+::: info ENTITY BY ENTITY, ONE BY ONE
+Process one action at a time. Fast, fun, and flexible.
+![a fennec eating pizza alone](https://fennecs.tech/img/fennec-for.png)
+
+The #1 concept that makes **fenn**ecs tick.
+:::
+
 #### `Stream<>.For(ComponentAction<>)`
 #### `Stream<>.For(EntityComponentAction<>)`
 #### `Stream<>.For<U>(U, UniformComponentAction<>)`
 #### `Stream<>.For<U>(U, UniformEntityComponentAction<>)`
-
-::: info ENTITY BY ENTITY, ONE BY ONE
-Process one work item at a time. Fast, fun, and flexible.
-![a fennec eating pizza alone](https://fennecs.tech/img/fennec-for.png)
-Call a [`ComponentAction`](Delegates.md#ComponentAction-and-UniformComponentAction) delegate for each Entity in the Query, providing the Components that match the ==Stream Types== as `ref` to the code.  
-:::
-
-"**For**" is always there "**For U**"... and _gets it done_ in a quick, predictable, reliable way.  Chances are you can ship your entire game with just this one. Let us know how it went!
-
-### Description
-Single-theaded, synchronous Runner Methods on Queries with 1 or more [Stream Types](index.md#stream-types).
-
-A `For`-Runner takes one of the [ComponentActions](Delegates.md) as argument. It's the most flexible runner, and the [EntityComponentAction](Delegates.md) variants will conveniently provide the Entity along with the Component refs, and the [UniformComponentAction](Delegates.md) variants will provide a Uniform data item to the delegate.
-
-
-The Runner is executed directly on the calling thread. Until the runner returns, the World is in `WorldMode.Deferred`, meaning structural changes are applied once the Runner has finished.
 
 ### Basic Syntax
 
@@ -31,6 +22,7 @@ Call a Runner on a Query to have it execute the delegate you're passing in. You 
 
 ::: code-group
 ```cs [For(...) plain]
+var myStream = world.Stream<Vector3>(); //tip: save this in a field
 myStream.For((ref Vector3 velocity) => 
 {
     velocity += 9.81f * Vector3.DOWN * Time.deltaTime;
@@ -38,6 +30,7 @@ myStream.For((ref Vector3 velocity) =>
 ```
 
 ```cs [For&lt;U&gt;(...) with uniform value]
+var myStream = World.Stream<Vector3>();
 myStream.For(
     uniform: 9.81f * Vector3.DOWN * Time.deltaTime,  // pre-calculating gravity
     action: static (Vector3 Gdt, ref Vector3 velocity) => 
@@ -47,6 +40,7 @@ myStream.For(
 ); 
 ```
 ```cs [For&lt;U&gt;(...) with uniform tuple]
+var myStream = world.Stream<Vector3>();
 myStream.For(
     uniform: (9.81f, Vector3.DOWN, Time.deltaTime),
     action: ((float g, Vector3 dir, float dt) uniform, ref Vector3 velocity) => 
@@ -64,6 +58,7 @@ It can be passed in as the first parameter, which must be an `in` parameter.
 
 ::: code-group
 ```cs [For(...) plain]
+var myStream = world.Stream<Vector3>();
 myStream.For((in Entity entity, ref Vector3 position) => 
 {
     if (position.y < 0) 
@@ -74,7 +69,9 @@ myStream.For((in Entity entity, ref Vector3 position) =>
 ```
 
 ```cs [For(...) with uniform value]
-myStream.For(DateTimeOffset.UtcNow,
+var myStream = world.Query<Vector3>().Not<ImpactTime>().Stream();
+myStream.For(
+    DateTimeOffset.UtcNow,
     (DateTimeOffset when, in Entity entity, ref Vector3 velocity) => 
     {
         if (position.y < 0) entity.Add<ImpactTime>(when);
@@ -83,6 +80,7 @@ myStream.For(DateTimeOffset.UtcNow,
 ```
 
 ```cs [For(...) verbose, with uniform value]
+var myStream = world.Query<Vector3>().Not<ImpactTime>().Stream();
 myStream.For(
     uniform: DateTimeOffset.UtcNow,
     action: static (DateTimeOffset when, in Entity entity, ref Vector3 velocity) => 
@@ -91,12 +89,23 @@ myStream.For(
     }
 ); 
 ```
-------------------------
+
+## Description
+Calls a [`ComponentAction`](Delegates.md#ComponentAction-and-UniformComponentAction) or  [`EntityComponentAction`](Delegates.md#entitycomponentaction-and-entityuniformcomponentaction) delegate for each Entity in the Query, providing the Components that match the ==Stream Types== as `ref` parameters, and the Entity itself as an `in` parameter.
+
+> "**For**" is always there "**For U**"... and _gets it done_ in a quick, predictable, reliable way.  Chances are you can ship your entire game with just this one. Let us know how it went!
 ::: tip :neofox_glasses::neofox_glasses: DOUBLE SUPERNERD PRO TIP
 1. The function passed as `ComponentAction` can be `static`, even if they are written as anonymous delegates or lambda expressions! This reduces the allocation of memory for a closure or context to zero in most cases. Consider adding the keyword `static` where you can.
 
 2. Uniforms will improve performance of your worker functions when it comes to reading data "from outside". In our examples, if `Time.deltaTime` would be read from memory, cache, or (heaven forbid) run a getter function for each Entity! Pre-read and pre-calculate values and pass them as uniforms when processing a large number of Entities.
 :::
+
+
+## Behaviour Details
+A `For`-Runner takes one of the [ComponentActions](Delegates.md) as argument. It's the most flexible runner, and the [EntityComponentAction](Delegates.md) variants will conveniently provide the Entity along with the Component refs, and the [UniformComponentAction](Delegates.md) variants will provide a Uniform data item to the delegate.
+
+The Runner is executed directly on the calling thread. Until the runner returns, the World is in `WorldMode.Deferred`, meaning structural changes are applied once the Runner has finished.
+
 
 ### Performance Considerations in Calling Conventions
 

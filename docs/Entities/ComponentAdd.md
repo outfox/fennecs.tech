@@ -4,13 +4,13 @@ order: 3
 outline: [1, 2]
 ---
 
-# Adding & Removing a Component
+# Adding Components
 
 ::: info You'll be doing this a lot!
 It's good practice to add components. It's how stuff gets done!
 :::
 
-### :neofox_cute_reach: Adding Components :neofox_hug_haj_heart:
+### :neofox_cute_reach: `Add<C>(...)` :neofox_hug_haj_heart:
 
 - `Entity.Add<C>()`: Adds a default, plain newable component of type `C` to the entity/entities.
 - `Entity.Add<C>(C value)`: Adds a plain component with the specified value of type `C` to the entity/entities.

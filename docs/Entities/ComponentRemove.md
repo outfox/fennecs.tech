@@ -10,7 +10,7 @@ outline: [1, 2]
 It's good practice to remove components. It's how stuff gets undone!
 :::
 
-### :neofox_hug_haj: Removing Components :neofox_floof_sad_reach:
+### :neofox_hug_haj: `Remove<C>(...)` :neofox_floof_sad_reach:
 
 - `Entity.Remove<C>()`: Removes a plain component of type `C` from the entity/entities.
 - `Entity.Remove<R>(Entity relation)`: Removes a relation component of type `R` with the specified relation from the entity/entities.

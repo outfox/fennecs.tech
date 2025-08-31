@@ -3,15 +3,17 @@ title: Raw
 order: 3
 
 ---
-# Custom Query Workloads
-#### `Stream<>.Raw(MemoryAction<>)`
-#### `Stream<>.Raw<U>(U, UniformMemoryAction<>)`
-
+# RAW: Custom Query Workloads
 ::: danger ARCHETYPE BY ARCHETYPE
 Entire Archetypes, delivered as contiguous memory. Here's your truckload of stuff - dig in!
 ![a fennec with a big stack of pizza in boxes](https://fennecs.tech/img/fennec-raw.png)
 Using a [`MemoryAction`](Delegates.md#memoryaction-and-memoryUniformAction) or [`UniformMemoryAction`](Delegates.md#memoryaction-and-memoryUniformAction), delivers the *entire stream data* of each Archetype directly ~~into your fox~~ to your delegate in one `Memory<T>` per Stream Type.
 :::
+
+#### `Stream<>.Raw(MemoryAction<>)`
+#### `Stream<>.Raw<U>(U, UniformMemoryAction<>)`
+----------------------
+> ... tfw you really figured out what you want your code to be doing, and it's time to apply drastic optimizations to your workloads.
 
 ### Processing Memory in Contiguous Blocks
 

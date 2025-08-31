@@ -8,7 +8,7 @@ outline: [1, 2]
 ::: warning :neofox_flop_blep: This is rarely necessary!
 #### The API below is not a primary means to read/write components in **fenn**ecs. 
 
-Let's work on many/some/all/no Entities and their Components in a row (or at once!) using:
+Try to work on one/some/many/all/no Entities and their Components in a row (or at once!) using:
 - [Streams](/docs/Streams/)
 - [Queries](/docs/Queries/)
 

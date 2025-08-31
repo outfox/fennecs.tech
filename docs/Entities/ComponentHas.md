@@ -7,6 +7,7 @@ outline: [1, 2]
 # Checking for Presence of a Component
 
 ::: warning :neofox_flop_blep: This is rarely necessary!
+#### The API below is not a primary means to find components in **fenn**ecs. 
 A preferable tool to find entities with certain components are [Queries](/docs/Queries/).
 
 An ECS cares little about the individual entity, and so should we all!
