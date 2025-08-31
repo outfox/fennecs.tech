@@ -37,7 +37,7 @@ myStream.For((ref Vector3 velocity) =>
 });
 ```
 
-```cs [For&lt;U&gt;(...) with uniform float]
+```cs [For&lt;U&gt;(...) with uniform value]
 myStream.For(
     uniform: 9.81f * Vector3.DOWN * Time.deltaTime,  // pre-calculating gravity
     action: static (Vector3 Gdt, ref Vector3 velocity) => 
@@ -57,6 +57,41 @@ myStream.For(
 ```
 :::
 
+### Syntax... with Entity!
+
+Sometimes you want to know about the Entity that you're working on. Usually to make structural changes to it.
+It can be passed in as the first parameter, which must be an `in` parameter.
+
+::: code-group
+```cs [For(...) plain]
+myStream.For((in Entity entity, ref Vector3 position) => 
+{
+    if (position.y < 0) 
+    {
+        entity.Despawn(); // splat...
+    }
+});
+```
+
+```cs [For(...) with uniform value]
+myStream.For(DateTimeOffset.UtcNow,
+    (DateTimeOffset when, in Entity entity, ref Vector3 velocity) => 
+    {
+        if (position.y < 0) entity.Add<ImpactTime>(when);
+    }
+); 
+```
+
+```cs [For(...) verbose, with uniform value]
+myStream.For(
+    uniform: DateTimeOffset.UtcNow,
+    action: static (DateTimeOffset when, in Entity entity, ref Vector3 velocity) => 
+    {
+        if (position.y < 0) entity.Add<ImpactTime>(when);
+    }
+); 
+```
+------------------------
 ::: tip :neofox_glasses::neofox_glasses: DOUBLE SUPERNERD PRO TIP
 1. The function passed as `ComponentAction` can be `static`, even if they are written as anonymous delegates or lambda expressions! This reduces the allocation of memory for a closure or context to zero in most cases. Consider adding the keyword `static` where you can.
 

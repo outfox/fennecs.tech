@@ -68,3 +68,10 @@ var ent (itiseExceptCustomersOfChase = world
 bob.Remove<Bank>(chase); // bob no longer banks at chase
 bob.Remove(chase); // type inference works here, too
 ```
+
+## Caveats
+::: warning :neofox_dizzy: BEWARE of ==FRAGMENTATION==
+Use Object Links and Relations sparingly to group larger families of Entities. The difference to a reference type Component is that an entity can have any number of Object Links or Relations of the same type. This means that for `n` different linked Objects or target Entities, up to `n!` Archetypes could exist at runtime were you to attach all permutations of them to Entities at runtime.
+
+Naturally, only Archetypes for actual constellations of Links and Relations on Entities will exist, so it is entirely up to your code. Great power, great responsibility.
+:::

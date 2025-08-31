@@ -1,7 +1,7 @@
 ---
 title: Liveness
 layout: doc
-order: 2
+order: 7
 ---
 
 
@@ -44,4 +44,4 @@ worldLock.Dispose(); // this will catch up the despawns
 :::
 
 ## Future Features
-We're working on a way to make pending spawns and despawns apparent, as well.
+We're working on a way to make pending spawns and despawns apparent. *(e.g. this entity is about to despawn / this entity is a placeholder for an entity being prepared to be spawned)*

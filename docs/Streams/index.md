@@ -1,5 +1,5 @@
 ---
-title: Streams
+title: 🌈 Streams
 outline: [1, 3]
 order: 5
 ---

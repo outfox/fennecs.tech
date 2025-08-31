@@ -32,19 +32,19 @@ These are invokable through [`Stream<>.For`](Stream.For.md). In addition to the 
 
 ::: code-group
 ```cs [basic]
-delegate void EntityComponentAction<C0>(Entity entity, ref C0 comp0);
-delegate void EntityComponentAction<C0, C1>(Entity entity, ref C0 comp0, ref C1 comp1);
-delegate void EntityComponentAction<C0, C1, C2>(Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2);
-delegate void EntityComponentAction<C0, C1, C2, C3>(Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2, ref C3 comp3); 
-delegate void EntityComponentAction<C0, C1, C2, C3, C4>(Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2, ref C3 comp3, ref C4 comp4);
+delegate void EntityComponentAction<C0>(in Entity entity, ref C0 comp0);
+delegate void EntityComponentAction<C0, C1>(in Entity entity, ref C0 comp0, ref C1 comp1);
+delegate void EntityComponentAction<C0, C1, C2>(in Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2);
+delegate void EntityComponentAction<C0, C1, C2, C3>(in Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2, ref C3 comp3); 
+delegate void EntityComponentAction<C0, C1, C2, C3, C4>(in in Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2, ref C3 comp3, ref C4 comp4);
 ```
 
 ```cs [with uniform]
-delegate void UniformEntityComponentAction<in U, C0>(U uniform, Entity entity, ref C0 comp0);
-delegate void UniformEntityComponentAction<in U, C0, C1>(U uniform, Entity entity, ref C0 comp0, ref C1 comp1);
-delegate void UniformEntityComponentAction<in U, C0, C1, C2>(U uniform, Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2);
-delegate void UniformEntityComponentAction<in U, C0, C1, C2, C3>(U uniform, Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2, ref C3 comp3);
-delegate void UniformEntityComponentAction<in U, C0, C1, C2, C3, C4>(U uniform, Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2, ref C3 comp3, ref C4 comp4);
+delegate void UniformEntityComponentAction<in U, C0>(U uniform, in Entity entity, ref C0 comp0);
+delegate void UniformEntityComponentAction<in U, C0, C1>(U uniform, in Entity entity, ref C0 comp0, ref C1 comp1);
+delegate void UniformEntityComponentAction<in U, C0, C1, C2>(U uniform, in Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2);
+delegate void UniformEntityComponentAction<in U, C0, C1, C2, C3>(U uniform, in Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2, ref C3 comp3);
+delegate void UniformEntityComponentAction<in U, C0, C1, C2, C3, C4>(U uniform, in Entity entity, ref C0 comp0, ref C1 comp1, ref C2 comp2, ref C3 comp3, ref C4 comp4);
 ```
 :::
 

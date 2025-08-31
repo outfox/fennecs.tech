@@ -4,7 +4,7 @@ order: 12
 
 ---
 
-# Comp Expressions
+# Comp Expressions (rework in progress)
 
 Sometimes, you have to address the ~~queen's soldiers~~ components as what they are - just ~~playing cards~~ annotated types.
 
@@ -39,7 +39,7 @@ Creates a Comp Expression that represents a component of the given type that mat
 - `Match.Target` matches any component that represents a relation to an Object or Entity
 
 
-## Boxed Components
+## :neofox_box: Boxed Components
 
 These are encountered when serializing or inspecting components, and in operations when you can't know the types of all component at compile time.
 

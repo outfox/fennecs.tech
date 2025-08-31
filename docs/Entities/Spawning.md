@@ -1,6 +1,6 @@
 ---
-title: Spawning
-order: 0
+title: Spawn
+order: 1
 ---
 
 # Spawning Entities
