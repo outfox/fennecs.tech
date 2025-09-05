@@ -16,7 +16,7 @@ It's an easy, powerful way to operate in bulk on all entities matched by the que
 var whoTookDamage = world.Query<Health, Damage, Identity>().Stream();
 
 // Do something for each Entity in Query
-whoTookDamage.For((Entity entity, ref Health health, ref Damage damage) => 
+whoTookDamage.For((in Entity entity, ref Health health, ref Damage damage) => 
 {
     health.hp -= damage.amount;
     if (health.hp < 0) entity.Add<Exploding>();
