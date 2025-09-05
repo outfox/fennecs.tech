@@ -7,8 +7,8 @@ import { hyperlinkPlugin } from './plugin-hyperlink';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     srcExclude: [ // unknown: why doesn't this work? /README.html file is a legal url
-        '**/README.MD',
-        'README.MD',        
+        '**/README.md',
+        'README.md',        
     ],
 
   title: "fennecs.tech",
@@ -71,7 +71,7 @@ export default defineConfig({
         resolvePath: '/',
         includeRootIndexFile: false,
         collapseDepth: 1,        
-        excludePattern: ['**/README.MD', 'README.MD']
+        excludePattern: ['**/README.md', 'README.md']
       }
     ]),
 
