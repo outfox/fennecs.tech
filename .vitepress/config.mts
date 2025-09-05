@@ -3,8 +3,14 @@ import { generateSidebar } from 'vitepress-sidebar';
 import { neofoxPlugin } from './plugin-neofox';
 import { hyperlinkPlugin } from './plugin-hyperlink';
 
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+    srcExclude: [ // unknown: why doesn't this work? /README.html file is a legal url
+        '**/README.MD',
+        'README.MD',        
+    ],
+
   title: "fennecs.tech",
   description: "tiny C# ECS",
 
@@ -47,7 +53,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Examples', link: '/examples' }
     ],
 
     footer: {
@@ -64,7 +70,8 @@ export default defineConfig({
         scanStartPath: '/',
         resolvePath: '/',
         includeRootIndexFile: false,
-        collapseDepth: 1,
+        collapseDepth: 1,        
+        excludePattern: ['**/README.MD']
       }
     ]),
 
