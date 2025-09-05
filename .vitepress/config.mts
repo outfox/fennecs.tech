@@ -71,7 +71,7 @@ export default defineConfig({
         resolvePath: '/',
         includeRootIndexFile: false,
         collapseDepth: 1,        
-        excludePattern: ['**/README.MD']
+        excludePattern: ['**/README.MD', 'README.MD']
       }
     ]),
 
