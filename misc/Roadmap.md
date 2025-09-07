@@ -41,9 +41,9 @@ Pull Requests especially welcome (please open an issue first to discuss the feat
 :::
 
 ### Q2 2026
-::: details `0.9.0+` "**fenn**ecs Arena": Benchmark Suite (🦊 help wanted)
+::: details `0.9.0+` Benchmark Suite / 🦊**fenn**ecs Arena⚔️ (help wanted)
 - internal set of benchmarks to ensure performance and memory usage are in line with expectations, and to prove good practices
-- comparisons of **fenn**ecs with some other ECS libraries, likely as extended PR to [Doraku's Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark)
+- comparisons of **fenn**ecs with some other ECS libraries, likely as extended PR to (or fork of!) [Doraku's Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark)
 :::
 
 ### Q1 2026
@@ -58,7 +58,7 @@ The entity struct needs a refactor for higher memory bandwidth and more consiste
 
 
 ### Q3 2025
-::: details `0.6.x` Stream Filters & API cleanups
+::: details `0.6.x` End of Beta: Stream Filters & API cleanups
 After the dogfooding period, several feedbacks and experiences influence the following:
 - `Stream` filters extended with the capability to filter by component values (in addition to component presence/absence). This is provided through a LINQ-like syntax: `Stream<...>.Where(lambda)`
 - `Streams`become record structs, and as such are more lightweight and immutable *(their control structures, not their "contents")*.
