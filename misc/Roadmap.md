@@ -24,9 +24,6 @@ Pull Requests especially welcome (please open an issue first to discuss the feat
 - Documentation "feature complete" (every API feature explained)
 - Short-Term Roadmap (until 1.5.0)
 - Long-Term Roadmap (for 2.0.0)
-:::
-
-::: details `0.9.0+` Demos & Publicity (🦊help wanted)
 - 3rd party demos and examples
 - 3rd party exposition & tutorials (e.g. YouTube, blog posts)
 - 1st party exposition (e.g. YouTube shorts)
@@ -44,7 +41,7 @@ Pull Requests especially welcome (please open an issue first to discuss the feat
 :::
 
 ### Q2 2026
-::: details `0.8.0+` "**fenn**ecs Arena": Benchmark Suite (🦊 help wanted)
+::: details `0.9.0+` "**fenn**ecs Arena": Benchmark Suite (🦊 help wanted)
 - internal set of benchmarks to ensure performance and memory usage are in line with expectations, and to prove good practices
 - comparisons of **fenn**ecs with some other ECS libraries, likely as extended PR to [Doraku's Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark)
 :::
