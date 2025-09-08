@@ -9,10 +9,6 @@ order: 3
 
 Here's a list of planned and speculative developments coming in the future.
 
-For detailed feature breakdowns and progress, visit:
-
-# 🔗[Projects Status Board on GitHub](https://github.com/orgs/outfox/projects/1)
-
 Feedback and questions are always appreciated, please submit them on GitHub / Discord:
 | What? | Where? |
 | ------- | --------- |
@@ -28,9 +24,6 @@ Pull Requests especially welcome (please open an issue first to discuss the feat
 - Documentation "feature complete" (every API feature explained)
 - Short-Term Roadmap (until 1.5.0)
 - Long-Term Roadmap (for 2.0.0)
-:::
-
-::: details `0.8.0+` Demos & Publicity (🦊help wanted)
 - 3rd party demos and examples
 - 3rd party exposition & tutorials (e.g. YouTube, blog posts)
 - 1st party exposition (e.g. YouTube shorts)
@@ -47,21 +40,29 @@ Pull Requests especially welcome (please open an issue first to discuss the feat
   - (more? others?)
 :::
 
-### Q2 2025
-::: details `0.7.0+` Benchmark Suite (🦊help wanted)
+### Q2 2026
+::: details `0.9.0+` Benchmark Suite / 🦊**fenn**ecs Arena⚔️ (help wanted)
 - internal set of benchmarks to ensure performance and memory usage are in line with expectations, and to prove good practices
-- comparisons of **fenn**ecs with some other ECS libraries, likely as extended PR to [Doraku's Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark)
+- comparisons of **fenn**ecs with some other ECS libraries, likely as extended PR to (or fork of!) [Doraku's Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark)
 :::
 
-### Q1 2025
-::: details `0.6.x` Arithmetic SIMD Methods
-A set of specific methods to allow for SIMD-accelerated arithmetic operations on Component data. Inspired by [TensorPrimitives](https://learn.microsoft.com/en-us/dotnet/api/system.numerics.tensors.tensorprimitives?view=net-9.0).
+### Q1 2026
+::: details `0.8.0+` Easy SIMD
+- A set of specific methods to allow for SIMD-accelerated arithmetic operations on Component data. Inspired by [TensorPrimitives](https://learn.microsoft.com/en-us/dotnet/api/system.numerics.tensors.tensorprimitives?view=net-9.0).
 :::
 
-::: details `0.6.0` Events and API Restructuring
-https://github.com/orgs/outfox/projects/1
+### Q4 2025
+::: details `0.7.x` Unified Entity
+The entity struct needs a refactor for higher memory bandwidth and more consistency, freeing bit fields for new key types, such as hash keys. Previous attempts at this refactor weren't successful, so I'm moving this into its own milestone out of ~~fear~~ respect for its complexity
 :::
 
+
+### Q3 2025
+::: details `0.6.x` End of Beta: Stream Filters & API cleanups
+After the dogfooding period, several feedbacks and experiences influence the following:
+- `Stream` filters extended with the capability to filter by component values (in addition to component presence/absence). This is provided through a LINQ-like syntax: `Stream<...>.Where(lambda)`
+- `Streams`become record structs, and as such are more lightweight and immutable *(their control structures, not their "contents")*.
+:::
 
 ### ~~Q3 2024~~
 ::: details `0.5.0+` ~~Dog Fooding Phase + Enhanced Beta~~
