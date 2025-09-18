@@ -40,7 +40,7 @@ A certain amount of Fragmentation is natural and often relatively harmless if yo
 ### Mitigating Fragmentation
 Mitigations for everyday fragmentation may include enabling/disabling components with a flag and just skipping over them in the runner code (if it's a minority of entities affected), but usually each use case will need custom optimizations when that time comes. 
 
-It's also recommended to perform large bulk operations such as adding or removing components to a large number of Entities through the [Query CRUD](/docs/Queries/CRUD.md), instead of the [per-Entity CRUD](/docs/Entities/CRUD.md).
+It's also recommended to perform large bulk operations such as adding or removing components to a large number of Entities through the [Query CRUD](/docs/Queries/CRUD.md), instead of the [per-Entity CRUD](/docs/Entities/ComponentAdd.md).
 
 You'll likely get a long way before Archetype Fragmentation becomes a serious threat, but among the performance risks, this may quickly become the biggest one. 
 
