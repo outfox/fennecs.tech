@@ -21,8 +21,8 @@
   "author": "Moritz Voss",
   "license": "MIT",
   "devDependencies": {
-    "markdown-it": "^14.1.0",
-    "vitepress": "^1.6.4",
+    "markdown-it": "14.1.0",
+    "vitepress": "1.6.4",
     "vitepress-sidebar": "^1.31.1"
   }
 }
