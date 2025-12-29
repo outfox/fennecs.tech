@@ -22,15 +22,14 @@ hero:
       link: https://github.com/outfox/fennecs
 
 features:
-  - title: The ECS that ♥️'s you back!
-    details: A fresh, foxy, & free open source C# Entity Component System, for amazing games and simulations!
-  - title: Minimal Boilerplate.
-    details: 
-      <b>fenn</b>ecs is highly expressive, yet <i>least verbose</i> among its peers.<br/> Make choices, not compromises!
-  - title: Fun, Fast, Flexible!
-    details: Clever component and relation queries offer you the best of both composition <i>and</i> inheritance!
-  - title: Zero Code Generation.<br>Zero Dependencies.<br/>Zero Fox given.
-    details: . . . . . 💢
+  - title: Batteries Included
+    details: Entity relations, wildcard queries, and SIMD-ready streams - no extensions needed.
+  - title: Minimal Boilerplate
+    details: Spawn entities, add components, query data. No systems to register, no attributes to decorate.
+  - title: Blazing Fast
+    details: Archetype storage powers cache-friendly iteration. Parallelize (or vectorize!) workloads with ease.
+  - title: Zero Codegen.<br/>Zero Dependencies.
+    details: Pure C#, nothing to configure. <br/><code>dotnet add package fennecs</code><br/>Let's go! 🦊
 
 head:
   - - meta
