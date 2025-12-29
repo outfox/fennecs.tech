@@ -23,13 +23,13 @@ hero:
 
 features:
   - title: Batteries Included
-    details: Entity relations, wildcard queries, and SIMD-ready streams - no extensions needed.
+    details: Entity relations, wildcard queries, and SIMD-ready streams. <br/>Plays nice with game engines!
   - title: Minimal Boilerplate
-    details: Spawn entities, add components, query data. No systems to register, no attributes to decorate.
+    details: Spawn entities, add your components, query entities. <br/>No code generation. No attributes.
   - title: Blazing Fast
-    details: Archetype storage powers cache-friendly iteration. Parallelize (or vectorize!) workloads with ease.
+    details: Archetype storage powers cache-friendly iteration. <br/>Parallelize & vectorize with ease.
   - title: Zero Codegen.<br/>Zero Dependencies.
-    details: Pure C#, nothing to configure. <br/><code>dotnet add package fennecs</code><br/>Let's go! 🦊
+    details: Pure C#, nothing to configure. <br/><code>dotnet add package fennecs</code>
 
 head:
   - - meta
