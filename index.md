@@ -61,7 +61,7 @@ head:
 ::: info :neofox_facepalm: We know... oh, _we know._    
 **fenn**ecs is an ECS for .NET 8/9/10 with zero codegen, zero dependencies, and the lowest boilerplate in its class. 
 
-Relations, SIMD-ready streams, and wildcard queries—all in a tiny package.
+Relations, SIMD-ready streams, and wildcard queries - all in a tiny package.
 :::
 
 ### [Check out the docs →](/docs/index.md)
