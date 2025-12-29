@@ -57,19 +57,11 @@ head:
 <br/>
 
 ## Ok, what the fox? *Another ECS?!*
-# :neofox_facepalm: We know... oh, _we know._    
 
-Yet, in the tiniest of nutshells: 
-> _... this one hits different._
+::: info :neofox_facepalm: We know... oh, _we know._    
+**fenn**ecs is an ECS for .NET 8/9/10 with zero codegen, zero dependencies, and the lowest boilerplate in its class. 
 
-**fenn**ecs is an archetype-based [C# Entity-Component System](https://github.com/SanderMertens/ecs-faq) library. It targets [.NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) and is distributed as a prebuilt [nuget package](http://nuget.org/packages/fennecs) or in source code on [GitHub](https://github.com/outfox/fennecs). The broader term [ECS](https://github.com/SanderMertens/ecs-faq?tab=readme-ov-file#what-is-ecs) describes a family of architectures and design patterns most commonly used in **Game Development** and **Simulation Software**, applying various principles of **Data-Oriented Design** to leverage the capabilities of modern CPUs.
+Relations, SIMD-ready streams, and wildcard queries—all in a tiny package.
+:::
 
-**fenn**ecs strictly adheres to its design principles of reducing boilerplate and cognitive load first and foremost. Second, we explore innovative approaches to structuring and querying component data without sacrificing flexibility. 
-
-Furthermore, **fenn**ecs allows developers to mix and match the advantages of procedural, functional, and SIMD programming, as well as to follow both compositional and inheritance-based approaches to domain modeling. 
-
-Doing all this with literally *zero dependency baggage* sets **fenn**ecs apart from many bulkier, more rigid, or more opinionated libraries.
-
-### Come on in, check out ~~[the fox](/docs/index.md)~~ [the docs!](/docs/index.md)
-
-Beyond its goals for simplicity and flexibility, you may discover that **fenn**ecs still punches way above its weight in terms of performance. Our cheeky little library lives up to its name by all at once being **small, clever, quick,** *and full of* **delightfully terrible puns!**
+### [Check out the docs →](/docs/index.md)
