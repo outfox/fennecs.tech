@@ -11,13 +11,7 @@
     "upload": "aws s3 sync s3 s3://fennecs.tech --delete && aws s3 sync .vitepress/dist s3://fennecs.tech",
     "invalidate": "aws cloudfront create-invalidation --distribution-id E1M9ZYXQGE1GG3 --paths \"/*\"",
     "deploy": "npm run build && npm run upload && npm run invalidate",
-    "preview": "vitepress preview .",
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
-    "new:dev": "vitepress dev",
-    "new:build": "vitepress build",
-    "new:preview": "vitepress preview"
+    "preview": "vitepress preview ."
   },
   "keywords": [
     "documentation", "fennecs", "ecs", "entity component system"
