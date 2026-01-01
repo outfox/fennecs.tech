@@ -5,20 +5,23 @@ order: 3
 
 ![a stylized fennec fox looking at an endless horizon](https://fennecs.tech/img/fennec-roadmap.png)
 
-# The future of **fenn**ecs
+## The future of **fenn**ecs
 
 Here's a list of planned and speculative developments coming in the future.
 
 Feedback and questions are always appreciated, please submit them on GitHub / Discord:
+
 | What? | Where? |
 | ------- | --------- |
-| Issues | https://github.com/outfox/fennecs/issues |
-| Discussions | https://discord.gg/Bfx74WcVXW |
+| Issues | <https://github.com/outfox/fennecs/issues> |
+| Discussions | <https://discord.gg/Bfx74WcVXW> |
 
 Pull Requests especially welcome (please open an issue first to discuss the feature or bugfix you're planning to work on so your work gets the appreciation and attention it deserves).
 
-### When it's Done 
-::: details `1.0.0` Stable Release 
+### "When it's Done"
+
+::: details `1.0.0` Stable Release
+
 - 🎉 End of Beta
 - *(maybe)* Code-Signed NuGet Package
 - Documentation "feature complete" (every API feature explained)
@@ -40,32 +43,40 @@ Pull Requests especially welcome (please open an issue first to discuss the feat
   - (more? others?)
 :::
 
-### Q2 2026
+### Q4 2026
+
 ::: details `0.9.0+` Benchmark Suite / 🦊**fenn**ecs Arena⚔️ (help wanted)
+
 - internal set of benchmarks to ensure performance and memory usage are in line with expectations, and to prove good practices
 - comparisons of **fenn**ecs with some other ECS libraries, likely as extended PR to (or fork of!) [Doraku's Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark)
 :::
 
-### Q1 2026
+### Q3 2026
+
 ::: details `0.8.0+` Easy SIMD
+
 - A set of specific methods to allow for SIMD-accelerated arithmetic operations on Component data. Inspired by [TensorPrimitives](https://learn.microsoft.com/en-us/dotnet/api/system.numerics.tensors.tensorprimitives?view=net-9.0).
 :::
 
-### Q4 2025
+### Q2 2026
+
 ::: details `0.7.x` Unified Entity
 The entity struct needs a refactor for higher memory bandwidth and more consistency, freeing bit fields for new key types, such as hash keys. Previous attempts at this refactor weren't successful, so I'm moving this into its own milestone out of ~~fear~~ respect for its complexity
 :::
 
+### ~~Q3 2025~~
 
-### Q3 2025
 ::: details `0.6.x` End of Beta: Stream Filters & API cleanups
 After the dogfooding period, several feedbacks and experiences influence the following:
+
 - `Stream` filters extended with the capability to filter by component values (in addition to component presence/absence). This is provided through a LINQ-like syntax: `Stream<...>.Where(lambda)`
 - `Streams`become record structs, and as such are more lightweight and immutable *(their control structures, not their "contents")*.
 :::
 
 ### ~~Q3 2024~~
+
 ::: details `0.5.0+` ~~Dog Fooding Phase + Enhanced Beta~~
+
 - systematic internal and external beta testing
 - using the library in a [real-world project](https://jupiter.blue)
 - iteration on examples and tutorials
@@ -73,9 +84,8 @@ After the dogfooding period, several feedbacks and experiences influence the fol
 - consulting with subject matter experts for feedback
 :::
 
-
-
 ### ~~Q2 2024~~
+
 ::: details `0.1.x` ... `0.4.x` ~~Fundamental Beta & Feedback Phase~~
 
 - feedback acquisition & experimentation
@@ -86,8 +96,8 @@ After the dogfooding period, several feedbacks and experiences influence the fol
 - 3rd party benchmarking (e.g. [Doraku's Ecs.CSharp.Benchmark](https://github.com/Doraku/Ecs.CSharp.Benchmark))
 :::
 
-
 ### ~~Q1 2024~~
+
 ::: details `0.1.0` ~~Prerelease and First Beta~~
 **Done!**
 :::

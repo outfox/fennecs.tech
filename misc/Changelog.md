@@ -36,15 +36,17 @@ head:
       content: Changelog for fennecs, the tiny, fast, modern C# Entity-Component System for games and simulations!
 ---
 
+## Change Log & Release Notes
+
 ![a stylized fox shattering red and green polygons surrounded by source code](https://fennecs.tech/img/fennec-changelog.png)
 
-# Change Log & Release Notes
 Here be ~~dragons~~ more foxes. *What did you expect?*
 
 ## Upcoming
+
 *Collapsed for brevity and likely changes before release.*
 
-<details>
+::: details
 
 - Stream runners return their own Stream, allowing chaining operations.
 - Chunked Component Storage (global, or maybe each World may have its own chunk size)
@@ -52,17 +54,20 @@ Here be ~~dragons~~ more foxes. *What did you expect?*
 
 - `Has(params Comp[])` will be added to `QueryBuilders` to check for multiple components at once. (as well as `Any(params Comp[])`and `Not(params Comp[])`). These will be much more performant and low-allocation starting with .NET 9.0, and will use `Span<Comp>` in the future.
 - Breaking for `HasVirtual`, `GetVirtual`, adding `Match` expression support. (breaking means that the old methods will currently match Any, but the new versions will match Plain by default)
-- `Stream.Raw(EntitySpanAction action)` will be added to allow for processing all Entities in a Stream at maximum performance. 
+- `Stream.Raw(EntitySpanAction action)` will be added to allow for processing all Entities in a Stream at maximum performance.
 ...
 
 - There's now a hard limit of Worlds per Domain/Process.
+
 > *"256 Worlds should be enough for anyone!"*  
 > :neofox_flop_blep: ~ Fox Gates, circa 2024
 
 ### Deprecations
+
 - `Comp<...>.Plain` is deprecated. Switch to using `Comp<T>.Data` and `Comp<T>.Data<K>` instead.
 
 ### New Features
+
 - ✨Void Components!✨ <br>*(true zero-storage components)*
   - `Comp<T>.Tag` <br>
   Creates a Component of type T with no backing storage (zero size). This is better than using `Comp<T>.Plain` with 'zero' size, as the .NET Marshal would treat the latter as 1 byte, and moving it in memory isn't free. Type `T` won't store any data, so we recommend using empty structs for Tags.
@@ -70,7 +75,7 @@ Here be ~~dragons~~ more foxes. *What did you expect?*
 
 - ✨Keyed Components!✨ <br>*(unified secondary key semantics)*
   - `Comp<T>.Tag<K>(K key)`
-  - `Comp<T>.Data<K>(K key)`   
+  - `Comp<T>.Data<K>(K key)`
   - `Entity.Add<T, K>(T data, K key)`
   - `Entity.Tag<T, K>(K key)` <br>
   These create unique component Types for attaching to Entities or query in your World. They work similarly to Relations but use a Key based on the `GetHashCode` of the key parameter. Keys are strongly typed, so even if hashes match, there's no collision unless the Key Types are the same.
@@ -98,14 +103,17 @@ For swapping out Object Links for all holders, we recommend using a Batch Operat
 - `Stream<...>` now provides named elements in its constituent `ValueTuples`, this improves LINQ readability and reduces boilerplate:
 
 ::: code-group
+
 ```csharp  [new api]
 var found = mystream.FirstOrDefault(x => x.comp0 > mousePosition).entity;
 ```
+
 ```csharp  [old api]
 var found1 = mystream.Where(((Entity, float pos) tuple) => tuple.pos > mousePosition).Select(tuple => tuple.Item1).FirstOrDefault();
 var found2 = mystream.FirstOrDefault(((Entity, float pos) tuple) => tuple.pos > mousePosition).Item1;
 var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Item1;
 ```
+
 :::
 
 - Fixed [Issue #20](https://github.com/outfox/fennecs/issues/20) `Stream<...>.Truncate(int)` has been removed (there was no semantically clear way implement it, and it was forwarding to the Underlying Query without applying filters). Instead, just use `Stream.Query.Truncate(int)` if you want to cut down on the number of entities in a Stream, but Filtering logic will not be applied (since it operates on the underlying Query, not the Stream). You can still use `Stream<...>.Despawn()` to Despawn all entities from the Stream according to its current filter state.
@@ -113,13 +121,14 @@ var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Ite
 - Entity structs now are just 64 bits (very tight).
 - Entity structs and (internal) Identity structs are now value-identical and have been unified.
 
-- `Stream` (a Stream View without any type parameters) has been added. This allows for Filtering bare Queries, and also exposes a few Runners, such as `Stream.For(EntityAction action)` and `Stream.For<in U>(U uniform, UniformEntityAction action)`. 
+- `Stream` (a Stream View without any type parameters) has been added. This allows for Filtering bare Queries, and also exposes a few Runners, such as `Stream.For(EntityAction action)` and `Stream.For<in U>(U uniform, UniformEntityAction action)`.
 - Some new Delegate Types for Streams and Entity Spawners, not all are used (yet):
   - `EntityAction` - process one Entity
   - `UniformEntityAction<in U>` - process one Entity with a uniform parameter
   - `EntitySpanAction` - process a Span of Entities
   - `UniformEntitySpanAction<in U>` - process a Span of Entities with a uniform parameter
-</details>
+
+:::
 
 ## Version 0.5.14-beta
 
@@ -127,9 +136,10 @@ var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Ite
 
 ## Version 0.5.13-beta
 
-- Implemented [Issue #22](https://github.com/outfox/fennecs/issues/22) Adding typeless .Has() and .Get() methods for entity. 
+- Implemented [Issue #22](https://github.com/outfox/fennecs/issues/22) Adding typeless .Has() and .Get() methods for entity.
 
 `Entity` now implements `IAddRemoveBoxed`with the following methods:
+
 ```cs
     /// <summary>
     /// Typeless API: Check if the entity/entities has a Component of a specific backing type, with optional match expression for relations.
@@ -176,10 +186,11 @@ var found3 = mystream.FirstOrDefault((tuple) => tuple.Item2 > mousePosition).Ite
 
 ```
 
-
 ## Version 0.5.12-beta
-### Breaking Changes
-- `EntityComponentAction` Delegates now take the Entity as an `in` parameter. 
+
+### 0.5.12 Breaking Changes
+
+- `EntityComponentAction` Delegates now take the Entity as an `in` parameter.
 
 ```csharp
 public delegate void EntityComponentAction<C0>(in Entity entity, ref C0 comp0);
@@ -191,26 +202,30 @@ public delegate void UniformEntityComponentAction<in U, C0, C1>(U uniform, in En
 //etc.
 ```
 
-### Upgrading
+### 0.5.12 Upgrading
+
 Add the `in` keyword to your runner methods' or lambdas' parameters.
 
 ::: code-group
+
 ```csharp  [old api] 🕸️
 stream.For((Entity e, ref Component c) => {...});
 ```
+
 ```csharp [new api] ✨
 stream.For((in Entity e, ref Component c) => {...});
 ```
-:::
 
+:::
 
 - `fennecs.World` itself is no longer a Query (and subsequently, no longer supports Batch operations). Use `World.All` for this purpose.
 
 - Fixed: `World` implements the new `fennecs.Streamable` interface, so `World.Stream<...>` works as it did before, though it now returns the correct entity counts (instead of the world's entity count).
 
-### New Features
+### 0.5.12 New Features
 
 - Instance Property `fennecs.World.All`, also known as the universal query, contains all entities of a World.
+
 ```cs
 // Add this component to all entities in the world, will throw if not able.
 myWorld.All.Add<int>(123); 
@@ -225,18 +240,21 @@ myworld.All.Despawn();
 ```
 
 ## Version 0.5.11-beta
+
 - Fixed [Issue #23](https://github.com/outfox/fennecs/issues/23) Data Integrity Issue Following Despawn. Thanks to [Penny](https://github.com/PennyMew) for the Issue and PR to fix it!
 - Fixed [Issue #21](https://github.com/outfox/fennecs/issues/21) Streams Documentation [Example](https://fennecs.tech/docs/Streams/) was mixed up.
 
 ## Version 0.5.10-beta
+
 - Added `bool Entity.HasVirtual(object)` extension method to `fennecs.reflection`
 - Fixed [Issue #17](https://github.com/outfox/fennecs/issues/17) Entities that have self-referencing relations on themselves can now be despawned and bulk-despawned without crashing / potentially undefined behaviour.
 - Queries and Streams now use a SortedSet of Archetypes, which speeds up removals of Archetypes when they get Disposed from the World. (Experimental - this may get changed to a HashSet in the future)
 
-
 ## Version 0.5.9-beta
+
 - Added new namespace for some use cases using reflection: `fennecs.reflection`
-- Added Extension methods for `Entity`: 
+- Added Extension methods for `Entity`:
+
 ```cs
 namespace fennecs.reflection;
 
@@ -276,14 +294,16 @@ public static class ReflectionExtensions
 }
 ```
 
-
 ## Version 0.5.8-beta
+
 - `Component` factory class has most of its members deprecated. It is now a storage for a Boxed Component. ([updated documentation](/docs/Components/Expressions.md))
 - `Comp<T>` is a new factory class for Component Expressions. ([updated documentation](/docs/Components/Expressions.md))
 - get (read) a specific component using `entity.Get<T>(Match match)`, e.g. `entity.Get<MyLinkType>(Link.Any)` to get all the Links
 
-### Upgrading
+### 0.5.8 Upgrading
+
 ::: code-group
+
 ```csharp  [old api] 🕸️
 var thanosStream = population.Stream<Alive>() with
 {
@@ -291,6 +311,7 @@ var thanosStream = population.Stream<Alive>() with
     Exclude = [Component.PlainComponent<Lucky>()],
 };
 ```
+
 ```csharp [new api] ✨
 var thanosStream = population.Stream<Alive>() with
 {
@@ -298,21 +319,26 @@ var thanosStream = population.Stream<Alive>() with
     Exclude = [Comp<Lucky>.Plain],
 };
 ```
+
 :::
 
 ## Version 0.5.7-beta
+
 - `bugfix` - Stream Filters (Subset/Exclude) now affect the `Count` property of the Stream.
 - `bugfix` - `Stream<>.Despawn` respects current filters instead of despawning the entire underyling Query
 - reinstated the Thanos appetizer's functionality! OH SNAP!
 
 ## Version 0.5.6-beta
-- `Link.Any` is a Match Target that can be used to match any Link target in a Query. It's value-identical to `Match.Object`, but makes the code more readable and reads in line with `Entity.Any`. 
+
+- `Link.Any` is a Match Target that can be used to match any Link target in a Query. It's value-identical to `Match.Object`, but makes the code more readable and reads in line with `Entity.Any`.
 - lots of documentation updates and fixes
 
 ## Version 0.5.5-beta
+
 - `/www/misc/Changelog.md` added 🦊
 - `IBatch` renamed to `IBatchBegin`, since it is not the "Batch" itself, just the ability to create (begin) batches.
--  `IBatchBegin` now has all the overloads with AddConflict and RemoveConflict parameters formerly only available in `Query`, and thus are now available in `Stream<>`.
+- `IBatchBegin` now has all the overloads with AddConflict and RemoveConflict parameters formerly only available in `Query`, and thus are now available in `Stream<>`.
+
 ```csharp
 public interface IBatchBegin
 {
@@ -322,17 +348,22 @@ public interface IBatchBegin
     public Batch Batch(Batch.RemoveConflict remove);    
 }
 ```
+
 - submission must still be done by calling `Batch.Submit()`, which is not on this Interface.
 - `World.GCBehaviour` is now `init` only.
 
-### Upgrade Steps
-* You no longer need to call `Stream<>.Query.Batch(...)`, just use `Stream<>.Batch(...)` to access the overloads with `AddConflict` and `RemoveConflict` parameters. 
+### 0.5.5 Upgrade Steps
 
-### Breaking Changes
-* `Entity.Ref<C>` no longer automatically adds the component to the Entity if it does not exist. The syntax was too muddled, and certain degenerate types, such as `string`, could not match any overloads and could no longer be used with `Ref<C>`.
+- You no longer need to call `Stream<>.Query.Batch(...)`, just use `Stream<>.Batch(...)` to access the overloads with `AddConflict` and `RemoveConflict` parameters.
 
-### New Features
-* `Stream<>` can be cloned with Subset and Exclude filters:
+### 0.5.5 Breaking Changes
+
+- `Entity.Ref<C>` no longer automatically adds the component to the Entity if it does not exist. The syntax was too muddled, and certain degenerate types, such as `string`, could not match any overloads and could no longer be used with `Ref<C>`.
+
+### 0.5.5 New Features
+
+- `Stream<>` can be cloned with Subset and Exclude filters:
+
 ```csharp
  var filtered = myStream with 
     { 
@@ -342,6 +373,7 @@ public interface IBatchBegin
 ```
 
 - a new `Component` helper class exists to express strictly typed Match expressions, for these and other filters
+
 ```csharp
 public readonly record struct Component
 {
@@ -355,50 +387,67 @@ public readonly record struct Component
 } 
 ```
 
-### Performance Improvements
-* Several accidental allocation leaks plugged.
+### 0.5.5 Performance Improvements
 
-### Other Changes
-* Temporary Restriction: Cannot run Jobs on Queries with Wildcards. (an exception will be thrown)
-* `default(Match)` is `Match.Plain`, not `Match.Any` (otherwise it would be annoying to write Queries/Streams and run Jobs on them)
+- Several accidental allocation leaks plugged.
 
-### Known Issues
-* Entity-Entity Relations with an Entity that resides in the same Archetype (i.e. the relation is PART of the Archetype's signature) crashes when bulk Despawning entities.
-* Entity-Entity Relations with an Entity itself are a special case of the above, that can additionally face crash problems when despawning the entity itself.
-* Streams can no longer be warmed up (`Stream.Warmup()`) (like queries used to - this is an oversight). This results in one or several one-time 40 byte allocations to show up in BenchmarkDotNet output.
+### 0.5.5 Other Changes
 
+- Temporary Restriction: Cannot run Jobs on Queries with Wildcards. (an exception will be thrown)
+- `default(Match)` is `Match.Plain`, not `Match.Any` (otherwise it would be annoying to write Queries/Streams and run Jobs on them)
+
+### 0.5.5 Known Issues
+
+- Entity-Entity Relations with an Entity that resides in the same Archetype (i.e. the relation is PART of the Archetype's signature) crashes when bulk Despawning entities.
+- Entity-Entity Relations with an Entity itself are a special case of the above, that can additionally face crash problems when despawning the entity itself.
+- Streams can no longer be warmed up (`Stream.Warmup()`) (like queries used to - this is an oversight). This results in one or several one-time 40 byte allocations to show up in BenchmarkDotNet output.
 
 ## Version 0.5.4-beta
+
 - `Stream<>` is a lightweight View that can be created for any Query, and is what wraps zip_view-like enumeration and iteration over the Query (especiall `For`, `Job`, and `Raw`)
 - `Stream<...>` is `IEnumerable<ValueTuple<Entity, ...>>`, which is great for Unit Testing and simple, read-only enumeration of Queries.
 - `Stream<C1, C2, ...>` expose all the runner functions from `Stream<C1, C2>` and `Stream<C1>`.
 - `Entity.Ref<C>` creates the component if it is not present on an entity.
-- 
-### Breaking Changes
+-
+
+### 0.5.4 Breaking Changes
+
 - `Query` does no longer expose Runners; and no longer has intrinsic type parameters. Instead, `Stream<>` is used to access the same functionality.
 - `Query` enumerates ONLY to Entities, and no longer has an `IEnumerator` of component types.
 
-### Upgrade Steps
+### 0.5.4Upgrade Steps
+
 - instead of `World.Query<...>().Compile()`, you can use the shorthand `World.Query<...>().Stream()` or `World.Stream<...>()` to get a `Stream<>` instance to use.
 
-### Known Issues
+### 0.5.4Known Issues
+
 - the old StreamFilters on `Queries` have not been correctly ported to the `Stream<>` API, and won't wok.
 - `Entity.Ref<C>` in these versions is impossible to invoke with certain type parameters.
 
-
-
 ## Legacy Releases
-#### Version 0.5.3-beta
-#### Version 0.5.2-beta
-#### Version 0.5.0-beta
-#### Version 0.4.6-beta
-#### Version 0.4.5-beta
-#### Version 0.4.2-beta
-#### Version 0.4.0-beta
-#### Version 0.3.5-beta
-#### Version 0.2.0-beta
-#### Version 0.1.1-beta
-#### Version 0.1.0-beta
-#### Version 0.0.3-pre
-#### Version 0.0.1-pre
 
+### Version 0.5.3-beta
+
+### Version 0.5.2-beta
+
+### Version 0.5.0-beta
+
+### Version 0.4.6-beta
+
+### Version 0.4.5-beta
+
+### Version 0.4.2-beta
+
+### Version 0.4.0-beta
+
+### Version 0.3.5-beta
+
+### Version 0.2.0-beta
+
+### Version 0.1.1-beta
+
+### Version 0.1.0-beta
+
+### Version 0.0.3-pre
+
+### Version 0.0.1-pre
