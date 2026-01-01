@@ -4,6 +4,7 @@ import { hyperlinkPlugin } from './plugin-hyperlink';
 import { withSidebar } from 'vitepress-sidebar';
 
 
+// https://vitepress.dev/reference/site-config
 const vitePressConfigs : UserConfig = {
   title: "fennecs.NET",
   description: "tiny C# ECS",
@@ -129,8 +130,6 @@ const sidebarConfigs = {
   // debugPrint: false,
 };
 
-// https://vitepress.dev/reference/site-config
-//export default defineConfig(
-//  withSidebar(vitePressConfigs, sidebarConfigs)
-//);
-export default vitePressConfigs;
+export default defineConfig(
+  withSidebar(vitePressConfigs, sidebarConfigs)
+);
