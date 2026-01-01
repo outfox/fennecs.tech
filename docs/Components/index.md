@@ -8,7 +8,7 @@ outline: [2, 2]
 
 Components are data attached to Entities!
 
-![a cartoon fennec with a hand truck moving a large stack of colored boxes](https://fennecs.tech/img/fennec-components.png)
+![a cartoon fennec with a hand truck moving a large stack of colored boxes](https://fennecs.net/img/fennec-components.png)
 
 Whenever a Component is added or removed, the Entity moves to a new [Archetype](#archetypes).
 

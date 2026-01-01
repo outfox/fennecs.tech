@@ -1,5 +1,5 @@
 # fennecs ECS documentation
-This is a [VitePress](https://vitepress.dev) static site generator to create the website and documentation seen on [fennecs.tech](https://fennecs.tech)
+This is a [VitePress](https://vitepress.dev) static site generator to create the website and documentation seen on [fennecs.net](https://fennecs.net)
 
 A GitHub action will integrate all changes made to `main` and deploy a new website to the appropriate S3 bucket.
 

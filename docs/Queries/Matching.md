@@ -43,7 +43,7 @@ In fact, the way matching is implemented is foundational for how Archetype-based
 ## Teaser
 Together, `Types` and `Targets` unlock Entity relations and interactions in elegant, expressive ways that in many other ECS might seem like *pure science fiction*.
 
-![a fennec wearing a futuristic VR headset](https://fennecs.tech/img/fennec-3body.png)
+![a fennec wearing a futuristic VR headset](https://fennecs.net/img/fennec-3body.png)
 
 The [3-Body-Problem](/cookbook/staples/3Body.md) recipe and [N-Body-Problem](/examples/NBody.md) demo illustrate how to use Match Expressions to simulate complex systems of mutually interacting Entities.
 

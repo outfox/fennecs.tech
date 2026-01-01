@@ -8,7 +8,7 @@ order: 2
 
 The [three-body problem](https://en.wikipedia.org/wiki/Three-body_problem) is a classic problem in physics and mathematics that involves predicting the motion of three or more bodies under mutual attractive influences.
 
-![a fennec weaing a chrome-plated VR headset](https://fennecs.tech/img/fennec-3body.png)
+![a fennec weaing a chrome-plated VR headset](https://fennecs.net/img/fennec-3body.png)
 
 ### Trisolarians, Trishmolarians ...
 

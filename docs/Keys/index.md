@@ -4,7 +4,7 @@ order: 4
 ---
 # Secondary Keys
 
-![a fennec carrying a golden key](https://fennecs.tech/img/fennec-key.png)
+![a fennec carrying a golden key](https://fennecs.net/img/fennec-key.png)
 
 **fenn**ecs allows component types, which act as primary keys, to also reference an additional secondary key.
 

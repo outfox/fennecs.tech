@@ -2,7 +2,7 @@
 title: Acknowledgements
 ---
 
-![stylized fennec fox in front of a sky full of hearts](https://fennecs.tech/img/fennec-acknowledgements.png)
+![stylized fennec fox in front of a sky full of hearts](https://fennecs.net/img/fennec-acknowledgements.png)
 
 
 # Acknowledgements

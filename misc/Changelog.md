@@ -15,7 +15,7 @@ head:
       content: website
   - - meta
     - property: og:url
-      content: https://fennecs.tech/misc/Changelog.html
+      content: https://fennecs.net/misc/Changelog.html
   - - meta
     - property: og:title
       content: fennecs — Release Notes
@@ -24,13 +24,13 @@ head:
       content: fennecs — Release Notes
   - - meta
     - property: og:image
-      content: https://fennecs.tech/img/fennecs-changelog-panel.png
+      content: https://fennecs.net/img/fennecs-changelog-panel.png
   - - meta
     - property: twitter:image
-      content: https://fennecs.tech/img/fennecs-changelog-panel.png
+      content: https://fennecs.net/img/fennecs-changelog-panel.png
   - - meta
     - name: twitter:image
-      content: https://fennecs.tech/img/fennecs-changelog-panel.png
+      content: https://fennecs.net/img/fennecs-changelog-panel.png
   - - meta
     - name: twitter:description
       content: Changelog for fennecs, the tiny, fast, modern C# Entity-Component System for games and simulations!
@@ -38,7 +38,7 @@ head:
 
 ## Change Log & Release Notes
 
-![a stylized fox shattering red and green polygons surrounded by source code](https://fennecs.tech/img/fennec-changelog.png)
+![a stylized fox shattering red and green polygons surrounded by source code](https://fennecs.net/img/fennec-changelog.png)
 
 Here be ~~dragons~~ more foxes. *What did you expect?*
 
@@ -242,7 +242,7 @@ myworld.All.Despawn();
 ## Version 0.5.11-beta
 
 - Fixed [Issue #23](https://github.com/outfox/fennecs/issues/23) Data Integrity Issue Following Despawn. Thanks to [Penny](https://github.com/PennyMew) for the Issue and PR to fix it!
-- Fixed [Issue #21](https://github.com/outfox/fennecs/issues/21) Streams Documentation [Example](https://fennecs.tech/docs/Streams/) was mixed up.
+- Fixed [Issue #21](https://github.com/outfox/fennecs/issues/21) Streams Documentation [Example](https://fennecs.net/docs/Streams/) was mixed up.
 
 ## Version 0.5.10-beta
 

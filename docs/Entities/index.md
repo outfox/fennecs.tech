@@ -20,7 +20,7 @@ Each Entity knows if it is [alive](Liveness.md) inside a World, and an Entity ca
 Despawned Entities are recycled, so they are extremely cheap to spawn and process even in large waves without runaway memory consumption.
 
 
-![fennecs in a box](https://fennecs.tech/img/fennecs-512.png)
+![fennecs in a box](https://fennecs.net/img/fennecs-512.png)
 *(cuddly, lively, come in litters of `1,073,741,824`)*
 
 ## Composition

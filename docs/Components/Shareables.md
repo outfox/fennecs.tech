@@ -10,7 +10,7 @@ One word: `reference types`. No, wait...
 
 You can easily share the same instance of a component among multiple entities using **reference types**. This allows you to efficiently share state and updates across entities.
 
-![two fennecs happily holding a huge cardboard box together](https://fennecs.tech/img/fennecs-shareable.png)
+![two fennecs happily holding a huge cardboard box together](https://fennecs.net/img/fennecs-shareable.png)
 
 This is especially useful for heavyweight objects that are expensive to create or update, such as large data structures.
 

@@ -7,7 +7,7 @@ order: 10
 
 Worlds represent the universe of Entities and their Components (as well as the component layout, and the Queries that match them). 
 
-![A fennec leaning casually on a World](https://fennecs.tech/img/fennec-world.png)
+![A fennec leaning casually on a World](https://fennecs.net/img/fennec-world.png)
 
 It is possible to have multiple Worlds, each with its own set of Queries and Entities.
 - Entities are unique to a World
@@ -15,7 +15,7 @@ It is possible to have multiple Worlds, each with its own set of Queries and Ent
 - Component Types are shared between Worlds
 - (this facilitates moving entities between Worlds) (planned fennecs 0.6.5+)
 
-![World Example: blue circle labeled world filled with fox emojis with many different traits](https://fennecs.tech/img/diagram-world.png)
+![World Example: blue circle labeled world filled with fox emojis with many different traits](https://fennecs.net/img/diagram-world.png)
 *"A world, populated by Entities with different traits (Components)"*
 
 ## Instantiation

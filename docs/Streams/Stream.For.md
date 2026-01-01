@@ -6,7 +6,7 @@ order: 1
 # FOR: Flexible Query Workloads
 ::: info ENTITY BY ENTITY, ONE BY ONE
 Process one action at a time. Fast, fun, and flexible.
-![a fennec eating pizza alone](https://fennecs.tech/img/fennec-for.png)
+![a fennec eating pizza alone](https://fennecs.net/img/fennec-for.png)
 
 The #1 concept that makes **fenn**ecs tick.
 :::

@@ -6,7 +6,7 @@ order: 2
 # JOB: Parallel Query Workloads
 ::: info ENTITY BY ENTITY, ONE BY ONE (IN PARALLEL!)
 One work item at a time, multi-threaded. Super-fast, and with few synchronization caveats.
-![three fennecs eating pizza together](https://fennecs.tech/img/fennec-job.png)
+![three fennecs eating pizza together](https://fennecs.net/img/fennec-job.png)
 Takes a [`ComponentAction`](Delegates.md#ComponentAction-and-UniformComponentAction) or [`UniformComponentAction`](Delegates.md#ComponentAction-and-UniformComponentAction) delegate and instantly schedules and executes the workload split into chunks, calling it many times in parallel across CPU cores.  
 :::
 

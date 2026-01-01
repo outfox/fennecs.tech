@@ -14,12 +14,12 @@ This demo is available for the following:
 
 | MonoGame |[Godot](https://github.com/outfox/fennecs/tree/main/demos/godot) | Flax | Unigine | Stride | Raylib | NeoAxis |
 |:--------------:|:------------------:|:--------------:|:--------------:|:--------------:|:--------------:|:--------------:|
-|![MonoGame](https://fennecs.tech/img/logo-monogame-80.png){.tile64 .nope} | ![Godot](https://fennecs.tech/img/logo-godot-80.png){.tile64} | ![Flax Engine](https://fennecs.tech/img/logo-flax-80.png){.tile64 .nope} | ![UNIGINE](https://fennecs.tech/img/logo-unigine-80-darkmode.png){.dark-only .tile64 .nope} ![UNIGINE](https://fennecs.tech/img/logo-unigine-80-lightmode.png){.light-only .tile64 .nope} | ![Stride](https://fennecs.tech/img/logo-stride-80.png){.tile64 .nope} |  ![Raylib-cs](https://fennecs.tech/img/logo-raylib-80.png){.tile64 .nope} | ![NeoAxis Engine](https://fennecs.tech/img/logo-neoaxis-80-darkmode.png){.dark-only .tile64 .nope} ![NeoAxis Engine](https://fennecs.tech/img/logo-neoaxis-80-lightmode.png){.light-only .tile64 .nope} |
+|![MonoGame](https://fennecs.net/img/logo-monogame-80.png){.tile64 .nope} | ![Godot](https://fennecs.net/img/logo-godot-80.png){.tile64} | ![Flax Engine](https://fennecs.net/img/logo-flax-80.png){.tile64 .nope} | ![UNIGINE](https://fennecs.net/img/logo-unigine-80-darkmode.png){.dark-only .tile64 .nope} ![UNIGINE](https://fennecs.net/img/logo-unigine-80-lightmode.png){.light-only .tile64 .nope} | ![Stride](https://fennecs.net/img/logo-stride-80.png){.tile64 .nope} |  ![Raylib-cs](https://fennecs.net/img/logo-raylib-80.png){.tile64 .nope} | ![NeoAxis Engine](https://fennecs.net/img/logo-neoaxis-80-darkmode.png){.dark-only .tile64 .nope} ![NeoAxis Engine](https://fennecs.net/img/logo-neoaxis-80-lightmode.png){.light-only .tile64 .nope} |
 
 ### Video (Godot Version)
 
 <video controls autoplay muted loop>
-<source src="https://fennecs.tech/video/fennecs-godot-nbody.mp4" type="video/mp4"/>
+<source src="https://fennecs.net/video/fennecs-godot-nbody.mp4" type="video/mp4"/>
 Your browser does not support the video tag.
 </video>
 

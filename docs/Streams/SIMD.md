@@ -11,7 +11,7 @@ Queries expose a set of SIMD operations that allow you to perform *bulk mutation
 
 ## `Stream<>.Blit<C>`
 
-![a fennec splashes a paintbucket at an entire wall ](https://fennecs.tech/img/fennec-blit.png)
+![a fennec splashes a paintbucket at an entire wall ](https://fennecs.net/img/fennec-blit.png)
 *"Imagine getting all your work done at once!"*
 
 The most prominent SIMD operation is `Blit`, which writes the component value to all entities in the Stream's Query. `C` must be one of the [Stream Types](index.md#stream-types). It requires no additional setup and is always safe.
@@ -51,7 +51,7 @@ But because Jobs execute in non-deterministic order, you will not be able to Bli
 
 ## Future SIMD Operations
 ::: details MORE COMING SOON - (click to preview)
-![fennec, translucent and glowy blue](https://fennecs.tech/img/fennec-vectorized-256.png)
+![fennec, translucent and glowy blue](https://fennecs.net/img/fennec-vectorized-256.png)
 
 ### Index (writes a running, contiguous index to the component)
 

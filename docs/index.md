@@ -8,8 +8,8 @@ head:
       content: API documentation for fennecs, the tiny, tiny, high-energy Entity-Component System
 
 ---
-!["using fennecs;"](https://fennecs.tech/img/using-fennecs-darkmode.svg){.dark-only}
-!["using fennecs;"](https://fennecs.tech/img/using-fennecs-lightmode.svg){.light-only}
+!["using fennecs;"](https://fennecs.net/img/using-fennecs-darkmode.svg){.dark-only}
+!["using fennecs;"](https://fennecs.net/img/using-fennecs-lightmode.svg){.light-only}
 
 ::: info :neofox_knives: THE COOKBOOK - Tutorials and Tricks
 Can't wait? Try **fenn**ecs for yourself as you flip through the courses of our **[Cookbook](/cookbook/index)**. 

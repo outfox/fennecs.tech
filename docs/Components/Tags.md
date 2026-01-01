@@ -6,7 +6,7 @@ order: 2
 # Tags (`void` Components)
 Super useful: Tags are a components that don't store any data. They are often used to mark entities that have a common trait or behavior.
 
-![an invisible fennec](https://fennecs.tech/img/fennec-void-darkmode.png){.dark-only} ![an invisible fennec](https://fennecs.tech/img/fennec-void-lightmode.png){.light-only}
+![an invisible fennec](https://fennecs.net/img/fennec-void-darkmode.png){.dark-only} ![an invisible fennec](https://fennecs.net/img/fennec-void-lightmode.png){.light-only}
 
 ```csharp
 public struct Pretty;

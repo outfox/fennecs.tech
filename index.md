@@ -7,8 +7,8 @@ order: 9000
 
 hero:
   image: 
-    dark: https://fennecs.tech/img/fennecs-logo-stacked-darkmode.svg
-    light: https://fennecs.tech/img/fennecs-logo-stacked-lightmode.svg
+    dark: https://fennecs.net/img/fennecs-logo-stacked-darkmode.svg
+    light: https://fennecs.net/img/fennecs-logo-stacked-lightmode.svg
     alt: fennecs Entity-Component System
   text: It's small foxes,<br/>all the way down.
   tagline: <em>... a tiny, tiny, high-energy ECS!</em>
@@ -45,7 +45,7 @@ head:
       content: website
   - - meta
     - property: og:url
-      content: https://fennecs.tech
+      content: https://fennecs.net
   - - meta
     - property: og:title
       content: fennecs — tiny ECS

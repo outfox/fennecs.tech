@@ -38,7 +38,7 @@ Work in progress, more examples will get added over time! Want to contribute or 
         <td style>
             <a href="Cubes.html">
             <video muted autoplay loop width=320px>
-            <source src="https://fennecs.tech/video/fennecs-godot-cubes-thumb.mp4" type="video/mp4"/>
+            <source src="https://fennecs.net/video/fennecs-godot-cubes-thumb.mp4" type="video/mp4"/>
             Your browser does not support the video tag.
             </video>
             View Demo Details</a>
@@ -56,7 +56,7 @@ Work in progress, more examples will get added over time! Want to contribute or 
         <td>
             <a href="NBody.html">
             <video muted autoplay loop width=320px>
-            <source src="https://fennecs.tech/video/fennecs-godot-nbody-thumb.mp4" type="video/mp4"/>
+            <source src="https://fennecs.net/video/fennecs-godot-nbody-thumb.mp4" type="video/mp4"/>
             Your browser does not support the video tag.
             </video>
             View Demo Details</a>

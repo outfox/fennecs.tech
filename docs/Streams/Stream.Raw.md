@@ -6,7 +6,7 @@ order: 3
 # RAW: Custom Query Workloads
 ::: danger ARCHETYPE BY ARCHETYPE
 Entire Archetypes, delivered as contiguous memory. Here's your truckload of stuff - dig in!
-![a fennec with a big stack of pizza in boxes](https://fennecs.tech/img/fennec-raw.png)
+![a fennec with a big stack of pizza in boxes](https://fennecs.net/img/fennec-raw.png)
 Using a [`MemoryAction`](Delegates.md#memoryaction-and-memoryUniformAction) or [`UniformMemoryAction`](Delegates.md#memoryaction-and-memoryUniformAction), delivers the *entire stream data* of each Archetype directly ~~into your fox~~ to your delegate in one `Memory<T>` per Stream Type.
 :::
 

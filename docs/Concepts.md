@@ -70,4 +70,4 @@ Worlds process them at the end of a Query Runner's scope, otherwise immediately.
 :::
 
 ## :neofox_boop_happy: Boop the fox, and you're all done with the first page!
-!["using fennecs;"](https://fennecs.tech/img/fennecs-rule.png)
+!["using fennecs;"](https://fennecs.net/img/fennecs-rule.png)

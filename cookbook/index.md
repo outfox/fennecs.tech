@@ -10,7 +10,7 @@ head:
 
 # Welcome to the Kitchen
 
-![two fennecs behind a kitchen counter, ready to cook](https://fennecs.tech/img/fennecs-kitchen-transparent.png)
+![two fennecs behind a kitchen counter, ready to cook](https://fennecs.net/img/fennecs-kitchen-transparent.png)
 
 *"Come in, we have cookies & pasta! Let's get you ~~sated~~ started!"*
 

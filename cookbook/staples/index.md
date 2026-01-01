@@ -12,7 +12,7 @@ head:
 All right, those [Appetizers](../appetizers/) were certainly a bit ~~cringe~~ weird, but now that you know about the concepts of **fenn**ecs, how would you go and apply them to your game / simulation / best software project ever?
 
 # Delicious. Finally, some good foxing food!
-![a fennec lifting a hood off some plated food](https://fennecs.tech/img/fennec-staples-csharp.png)
+![a fennec lifting a hood off some plated food](https://fennecs.net/img/fennec-staples-csharp.png)
 
 ::: tip :neofox_science: WHAT THE STAPLES ARE
 

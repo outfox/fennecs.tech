@@ -3,7 +3,7 @@ title: Roadmap
 order: 3
 ---
 
-![a stylized fennec fox looking at an endless horizon](https://fennecs.tech/img/fennec-roadmap.png)
+![a stylized fennec fox looking at an endless horizon](https://fennecs.net/img/fennec-roadmap.png)
 
 ## The future of **fenn**ecs
 

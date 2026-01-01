@@ -15,10 +15,10 @@ Each Query is a view into a World, representing a subset of its Entities. Querie
 
 ::: details (expand to see world)
 A World contains Entities and their Components, as well as their structure and Relations.
-![World Example: blue circle labeled world filled with fox emojis with many different traits](https://fennecs.tech/img/diagram-world.png)
+![World Example: blue circle labeled world filled with fox emojis with many different traits](https://fennecs.net/img/diagram-world.png)
 :::
 
-![Query Visualization: fox emojis with various traits grouped by common traits in several colored boxes](https://fennecs.tech/img/diagram-queries.png)
+![Query Visualization: fox emojis with various traits grouped by common traits in several colored boxes](https://fennecs.net/img/diagram-queries.png)
 
 
 
