@@ -28,25 +28,13 @@ stream.For(
 );
 ```
 
-```cs [(🤏 200% tighter in OTBS)]
+```cs [(🤏 250% tighter in C#14)]
 var stream = world.Stream<Vector3>();
 
-stream.For(Time.Delta, (float dt, ref Vector3 velocity) => {
+stream.For(Time.Delta, (dt, ref velocity) => {
       velocity.Y -= 9.81f * dt;
 });
 ```
-
-```cs [🚀 700% faster with SIMD]
-var simd = world.Query<Vector3>().SIMD();
-// this is still under hot & messy development right now 😅
-// you can use TensorPrimitives in the meantime, though!
-simd.Add(
-      destination: Comp<Vector3>.Plain,
-      operand: Comp<Vector3>.Plain, // can be same as destination!
-      uniform: Time.Delta * -9.81f * Vector3.UnitZ
-);
-```
-
 
 :::
 
