@@ -2,6 +2,8 @@
 layout: home
 title: fennecs
 titleTemplate: :title — tiny ECS
+menu: home
+order: 9000
 
 hero:
   image: 

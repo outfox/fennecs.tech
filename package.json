@@ -1,8 +1,9 @@
 {
   "name": "fennecs.tech",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "fennecs Documentation site",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vitepress dev .",
@@ -13,7 +14,10 @@
     "preview": "vitepress preview .",
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview"
+    "docs:preview": "vitepress preview",
+    "new:dev": "vitepress dev",
+    "new:build": "vitepress build",
+    "new:preview": "vitepress preview"
   },
   "keywords": [
     "documentation"
@@ -21,8 +25,7 @@
   "author": "Moritz Voss",
   "license": "MIT",
   "devDependencies": {
-    "markdown-it": "14.1.0",
-    "vitepress": "1.6.4",
-    "vitepress-sidebar": "1.31.1"
+    "vitepress": "^2.0.0-alpha.15",
+    "vitepress-sidebar": "^1.33.1"
   }
 }
