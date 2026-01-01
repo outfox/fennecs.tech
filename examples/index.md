@@ -18,14 +18,15 @@ Work in progress, more examples will get added over time! Want to contribute or 
 :::
  
 <table>
-    <tr>
+    <thead>
         <th>
             What the fox?
         </th>
         <th>
             Preview
         </th>
-    </tr>
+    </thead>
+    <tbody>
     <tr>
         <td style="width: 50%">
             <h4>Demo: Lots of Cubes</h4>
@@ -35,9 +36,9 @@ Work in progress, more examples will get added over time! Want to contribute or 
             <li>transfer data in bulk into game engine</li>
             </ul>
         </td>
-        <td style>
+        <td>
             <a href="Cubes.html">
-            <video muted autoplay loop width=320px>
+            <video muted autoplay loop width="320">
             <source src="https://fennecs.net/video/fennecs-godot-cubes-thumb.mp4" type="video/mp4"/>
             Your browser does not support the video tag.
             </video>
@@ -55,12 +56,13 @@ Work in progress, more examples will get added over time! Want to contribute or 
         </td>
         <td>
             <a href="NBody.html">
-            <video muted autoplay loop width=320px>
+            <video muted autoplay loop width="320">
             <source src="https://fennecs.net/video/fennecs-godot-nbody-thumb.mp4" type="video/mp4"/>
             Your browser does not support the video tag.
             </video>
             View Demo Details</a>
         </td>
     </tr>
+    </tbody>
 </table>
 
