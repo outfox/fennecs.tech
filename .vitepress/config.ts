@@ -1,13 +1,13 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, UserConfig } from 'vitepress'
 import { neofoxPlugin } from './plugin-neofox';
 import { hyperlinkPlugin } from './plugin-hyperlink';
 import { withSidebar } from 'vitepress-sidebar';
 
 
-const vitePressConfigs = {
+const vitePressConfigs : UserConfig = {
   title: "fennecs.NET",
   description: "tiny C# ECS",
-  /*
+
   head: [
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
@@ -33,7 +33,6 @@ const vitePressConfigs = {
     ['meta', { property: "twitter:image", content: "https://fennecs.tech/img/meta-fennecs.png" }],
     ['meta', { property: "author", content: "⤜outfox⤏" }],
   ],
-  */
 
   markdown: {
     config: (md: any) => {
@@ -131,6 +130,7 @@ const sidebarConfigs = {
 };
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig(
-  withSidebar(vitePressConfigs, sidebarConfigs)
-);
+//export default defineConfig(
+//  withSidebar(vitePressConfigs, sidebarConfigs)
+//);
+export default vitePressConfigs;
