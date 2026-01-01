@@ -102,7 +102,7 @@ const sidebarConfigs = {
   // excludeByFolderDepth: undefined,
   // includeDotFiles: false,
   // includeEmptyFolder: false,
-  includeRootIndexFile: true,
+  // includeRootIndexFile: false,
   // includeFolderIndexFile: false,
   //
   // ============ [ STYLING MENU TITLE ] ============
