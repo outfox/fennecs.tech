@@ -24,6 +24,6 @@ In our "game" loop, we get the current position of our ball Entity, and let each
 
 ### Recipe
 ::: code-group
-<<< ../../../fennecs/cookbook/Tsubasa.cs{cs:line-numbers} [Implementation]
-<<< ../../../fennecs/cookbook/Tsubasa.output.txt{txt} [Output]
+<<< ../../../src/cookbook/Tsubasa.cs{cs:line-numbers} [Implementation]
+<<< ../../../src/cookbook/Tsubasa.output.txt{txt} [Output]
 :::

@@ -26,8 +26,8 @@ Then, we bind them all in darkness with a `Stream<>.For` runner.
 
 ### Recipe
 ::: code-group
-<<< ../../../fennecs/cookbook/OneRing.cs {cs:line-numbers} [Implementation]
-<<< ../../../fennecs/cookbook/OneRing.output.txt{txt} [Output]
+<<< ../../../src/cookbook/OneRing.cs {cs:line-numbers} [Implementation]
+<<< ../../../src/cookbook/OneRing.output.txt{txt} [Output]
 :::
 
 In this example:

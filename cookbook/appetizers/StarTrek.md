@@ -26,6 +26,6 @@ We spawn a unique [Entity](/docs/Entities/index.md) for each captain; but `kirk`
 
 ### Recipe
 ::: code-group
-<<< ../../../fennecs/cookbook/StarTrek.cs {cs:line-numbers} [Implementation]
-<<< ../../../fennecs/cookbook/StarTrek.output.txt{txt} [Output]
+<<< ../../../src/cookbook/StarTrek.cs {cs:line-numbers} [Implementation]
+<<< ../../../src/cookbook/StarTrek.output.txt{txt} [Output]
 :::

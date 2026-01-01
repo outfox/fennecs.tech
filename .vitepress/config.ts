@@ -88,8 +88,8 @@ const sidebarConfigs = {
   // useTitleFromFileHeading: true,
   useTitleFromFrontmatter: true,
   frontmatterTitleFieldName: 'menu',
-  // useFolderLinkFromIndexFile: false,
-  // useFolderTitleFromIndexFile: false,
+  useFolderLinkFromIndexFile: true,
+  useFolderTitleFromIndexFile: true,
   //
   // ============ [ GETTING MENU LINK ] ============
   // useFolderLinkFromSameNameSubFile: false,

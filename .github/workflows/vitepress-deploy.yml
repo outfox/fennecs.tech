@@ -10,21 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout website repo
+    - name: Checkout doc repo
       uses: actions/checkout@v4
       with:
-        path: website
+        path: doc
 
     - name: Checkout fennecs
       uses: actions/checkout@v4
       with:
         repository: outfox/fennecs
-        path: fennecs
+        path: src
 
     - name: Set up Node.js
       uses: actions/setup-node@v5
       with:
-        node-version: '24.x'
+        node-version: '25.x'
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
@@ -35,21 +35,21 @@ jobs:
 
     - name: Install dependencies
       run: |
-        cd website
+        cd doc
         npm ci
 
     - name: Build VitePress
       run: |
-        cd website
+        cd doc
         npm run build
 
     - name: Deploy to S3
       run: |
-        cd website
+        cd doc
         npm run upload
 
     - name: Invalidate CloudFront cache
       run: |
-        cd website
+        cd doc
         npm run invalidate
       

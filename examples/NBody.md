@@ -4,11 +4,11 @@ title: "Demo: N-Body Problem"
 
 ---
 
-# Demo: N-Body Problem
+## Demo: N-Body Problem
 
 This demo demonstrates N:N relationships in an ECS, and how to set up and simulate an arbitrary number of bodies in a generic way.
 
-#### Source Code
+### Source Code
 
 This demo is available for the following:
 
@@ -29,7 +29,7 @@ Case in point here is not raw performance (although the basic GDscript-driven li
 
 ::: code-group
 
-<<< ../../fennecs/demos/godot/N-Body/NBodyDemo.cs#Showcase [Showcase]
+<<< ../../src/demos/godot/N-Body/NBodyDemo.cs#Showcase [Showcase]
 
 :::
 

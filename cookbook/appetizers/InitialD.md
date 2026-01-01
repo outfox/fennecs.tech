@@ -20,6 +20,6 @@ Let's build a sleeper drift racing championship car out of nothing but Entities 
 
 ### Recipe
 ::: code-group
-<<< ../../../fennecs/cookbook/InitialD.cs {cs:line-numbers} [Implementation]
-<<< ../../../fennecs/cookbook/InitialD.output.txt{txt} [Output]
+<<< ../../../src/cookbook/InitialD.cs {cs:line-numbers} [Implementation]
+<<< ../../../src/cookbook/InitialD.output.txt{txt} [Output]
 :::

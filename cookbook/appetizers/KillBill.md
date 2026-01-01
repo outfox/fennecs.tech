@@ -25,6 +25,6 @@ Next, we query for the Relation, say hello, and ~~unalive~~ interact with the En
 
 ### Recipe
 ::: code-group
-<<< ../../../fennecs/cookbook/KillBill.cs {cs:line-numbers} [Implementation]
-<<< ../../../fennecs/cookbook/KillBill.output.txt{txt} [Output]
+<<< ../../../src/cookbook/KillBill.cs {cs:line-numbers} [Implementation]
+<<< ../../../src/cookbook/KillBill.output.txt{txt} [Output]
 :::
