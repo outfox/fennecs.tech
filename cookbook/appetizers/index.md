@@ -31,6 +31,6 @@ Use them as you gradually build an understanding and mental model of **fenn**ecs
 ### Now go, get'em, foxy!
 
 ::: info :neofox_yell: CONTRIBUTIONS WELCOME!
-Got an idea to expand this section? Sweet! Just get it to to run, provide some cringy documentation, and if possible, make it fit into a single file under 200 lines of code, and visit [our Discord](https://discord.gg/Bfx74WcVXW) to share it with us! (or just open a PR on Github, that works too!)
+Got an idea to expand this section? Sweet! Just get it to to run, provide some cringy documentation, and if possible, make it fit into a single file under 200 lines of code, and visit [our Discord](https://discord.gg/eGNJaXRjPD) to share it with us! (or just open a PR on Github, that works too!)
 :::
 

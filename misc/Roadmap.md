@@ -14,7 +14,7 @@ Feedback and questions are always appreciated, please submit them on GitHub / Di
 | What? | Where? |
 | ------- | --------- |
 | Issues | <https://github.com/outfox/fennecs/issues> |
-| Discussions | <https://discord.gg/Bfx74WcVXW> |
+| Discussions | <https://discord.gg/eGNJaXRjPD> |
 
 Pull Requests especially welcome (please open an issue first to discuss the feature or bugfix you're planning to work on so your work gets the appreciation and attention it deserves).
 
