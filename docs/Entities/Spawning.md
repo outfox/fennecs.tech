@@ -1,17 +1,27 @@
 ---
 title: Spawn
 order: 1
+outline: [1, 2]
 ---
 
-# Spawning Entities
+# Spawning Entities :neofox_hyper:
 
-In **fenn**ecs, there are two primary ways to spawn entities: using the `World.Spawn()` method and using an `EntitySpawner` obtained via `World.Entity()`. Both approaches allow you to create new entities and add components to them, but they differ in their usage and flexibility.
+::: tip :neofox_thumbsup: Bringing Entities to Life
+Every entity starts here! Spawning is how you create new entities in your World, ready to receive components and participate in your game.
+:::
 
-## Quick & Easy Spawns
+In **fenn**ecs, there are two primary ways to spawn entities:
 
-The `World.Spawn()` method is the simplest way to create a new entity in the world. It returns an `EntityBuilder` that allows you to add components to the entity before it is spawned.
+| Method | Best For |
+|--------|----------|
+| `World.Spawn()` | Quick, one-off entities |
+| `World.Entity()` | Bulk spawning, templates |
 
-```csharp
+## Quick & Easy Spawns :neofox_comfy:
+
+The `World.Spawn()` method is the simplest way to create a new entity. It returns the entity immediately, and you can chain `Add` calls to attach components.
+
+```cs
 var world = new World();
 
 // Spawn a single entity
@@ -22,27 +32,21 @@ var entity = world.Spawn()
 
 In this example, we create a new entity using `World.Spawn()` and add two components (`Position` and `Velocity`) to it using the `Add` method. The entity is automatically spawned in the world after the components are added.
 
-::: tip :neofox_think: PAWS FOR THOUGHT: How appropriate is it to do things one-by-one in an ECS?
-The trivial spawning method is great for many scenarios (even beyond early development)!
-
-However if you have particularly complex entities with dozens of components, or wish to assemble them procedurally, or spawn many, it will hit its limits!
-
-Each `Add` call moves the Entity to another archetype, which leaves a trail of empty interstitial Archetypes in the World. Then for the next entity, the same is done again... and again... and again.
+::: info :neofox_think: Paws for Thought: Archetype Churning
+Each `Add` call moves the entity to a new archetype. For simple entities, this is fine! But for complex entities with many components, or when spawning thousands, consider using `EntitySpawner` instead.
 :::
 
-## Fast, Flexible Spawns
+## Fast, Flexible Spawns :neofox_hyper:
 
-The `EntitySpawner` is a more flexible way to spawn entities, especially when you need to create multiple entities with the same set of components. You can obtain an `EntitySpawner` by calling `World.Entity()`.
+The `EntitySpawner` is perfect for bulk spawning or creating entity templates. Get one via `World.Entity()`, configure it with components, then spawn as many entities as you need!
 
-Add Components and Relations to taste, then spawn a number of Entities by calling `Spawn(int count)`.
-
-All Entities will be spawned exactly in the Archetype that they belong, right from the start. Data is blitted directly to the Archetype's storages, so it's lightning-fast; and no empty Archetypes are left behind.
-
-In this example, we create an `EntitySpawner` using `World.Entity()` and add the desired components to it. We then use the `Spawn` method of the `EntitySpawner` to create multiple entities (10 in this case) with the same set of components. Finally, we call `Dispose()` and are done.
-
+**Benefits:**
+- Entities spawn directly into their final archetype (no churning!)
+- Data is blitted directly to storage (lightning-fast)
+- Reusable for spawning waves of similar entities
 
 ### Typical Use
-```csharp
+```cs
 var world = new World();
 
 using var spawner = world.Entity() // Requests an EntitySpawner
@@ -51,20 +55,16 @@ using var spawner = world.Entity() // Requests an EntitySpawner
     .Spawn(100_000); // AAAAAAAAAA!
 ```
 
-::: info :neofox_thumbsup: BONUS POINTS: Optional Cleanup with `Dispose()`
-`EntitySpawner` uses some internal pooled data structures to further conserve memory and accelerate Entity setup. Spawners are lightweight and no memory would be leaked either way, but they implement `IDisposable` to return the data structures to their pools for faster reuse. 
-
-It's up to you to hold on to them for as long as you like, and dispose of them when you're done.
+::: tip :neofox_thumbsup: Dispose for Extra Credit
+`EntitySpawner` implements `IDisposable` to return pooled data structures for reuse. No memory leaks either way, but disposing is a nice habit!
 :::
 
 
-The `EntitySpawner` approach is particularly useful when you need to spawn a large number of entities with the same components, as it avoids the overhead of creating individual `EntityBuilder`s for each entity.
+### Repeat Spawns & Templates
 
+Spawners can be modified and reused:
 
-### Repeat Spawns
-Here's another example that demonstrates the versatility of `EntitySpawner`:
-```csharp
-
+```cs
 world.Entity()
     .Add(new Health { Value = 100 })
     .Add<Dexterity>(12) // Stats do well with conversion operators for int!
@@ -87,11 +87,16 @@ return; // werewolfSpawner is automatically disposed here by the using statement
 ```
 
 
-## Advanced: Procedural Spawns
-(Work in progress - coming soon!)
+## Quick Reference
 
-## Conclusion
+| Scenario | Recommended |
+|----------|-------------|
+| Single entity, few components | `World.Spawn()` |
+| Single entity, many components | `EntitySpawner` |
+| Bulk spawning (10+ entities) | `EntitySpawner` |
+| Entity templates/factories | `EntitySpawner` |
+| Prototyping/debugging | `World.Spawn()` |
 
-Both `World.Spawn()` and `EntitySpawner` provide ways to create entities in **fenn**ecs. `World.Spawn()` is simpler and suitable for spawning individual entities, while `EntitySpawner` is more flexible and efficient for spawning multiple entities with the same set of components.
-
-Choose the spawning approach that best fits your needs based on the number of entities you need to create and the desired component composition.
+::: info :neofox_science: Performance Note
+For spawning 100+ similar entities, `EntitySpawner` can be 10-100x faster than individual `World.Spawn()` calls due to direct archetype placement and memory blitting.
+:::

@@ -4,45 +4,175 @@ order: 6
 outline: [1, 2]
 ---
 
-# Reading and Writing Components
-::: warning :neofox_flop_blep: This is rarely necessary!
-#### The API below is not a primary means to read/write components in **fenn**ecs. 
+# Reading & Writing Components :neofox_peek:
 
-Try to work on one/some/many/all/no Entities and their Components in a row (or at once!) using:
-- [Streams](/docs/Streams/)
-- [Queries](/docs/Queries/)
+::: warning :neofox_flop_blep: Consider Streams First!
+For bulk operations, [Streams](/docs/Streams/) are the way to go—they're faster and more ergonomic for processing many entities.
 
-Doing it directly through the Entity is *"suboptimal"*, basically painting a house through the mail slot.
-
-Yet... it's fine, even great, to use these every now and then.
-
-#### When to Use `Ref<>` and `Get<>`
-Well... somewhat vague, fringe use cases which usually arise while *not inside the context* of a Stream.
-- **Serialization**
-- **Tests and Debugging**
-- **UI event handlers** (and their deplorable ilk)
-> ... so *please* feel free to modify a `Birthday` component value in `ProfileSaveButtonClicked` using  
-```cs
-ref var birthday = ref entity.Ref<Birthday>();
-birthday.Date = DateTimePicker.Value;
-birthday.Cake = "🍰";
-```
-> ... we don't want you to go and `Add<UpdateBirthdayRequestComponent>(...)` and wait for your `AssignRequestedBirthdayUpdatesSystem` to come around do its thing. Don't do this to yourself.💙
+But for one-off access? `Ref` and `Get` are *perfect*. Don't overthink it! 💙
 :::
 
+## When Direct Access Makes Sense
 
-## Component Reference ("Read / Write")
-- `Entity.Ref<T>()`: Get a reference to a component. Go nuts!  
-*(within the boundaries of your scope)*
+- **UI event handlers** — User clicked a button, update the entity
+- **Serialization** — Save/load entity state
+- **Debugging** — Inspect values at runtime
+- **Tests** — Verify component values
+- **Initialization** — Set up entity after spawning
 
-- `Entity.Ref<T>(Entity relation)`: Get a reference to a component backing a relation  
-*(lets you reassign the value, but not the relation)*
+```cs
+// This is totally fine!
+ref var health = ref entity.Ref<Health>();
+health.Value = slider.Value;
+```
 
-## Getting Multiple Components of a single backing type
-- `Entity.Get<T>(Match match)`: Gets all components matching the expression; e.g. `entity.Get<MyLinkType>(Link.Any)` to get all Linked Objects on this Entity.
+## `Ref<C>()` - Get a Reference :neofox_thumbsup:
 
-## Getting all Components
-- `Entity.Components`: Returns an `IReadonlyList<Component>` of all components on the entity. (see [Boxed Components](/docs/Components/Expressions.md#boxed-components) for what's inside)
+Returns a **reference** to the component, allowing both reading and writing.
 
+### Method Signatures
+
+| Signature | Description |
+|-----------|-------------|
+| `Entity.Ref<C>()` | Reference to a plain component |
+| `Entity.Ref<C>(Match match)` | Reference with match expression |
+| `Entity.Ref<L>(Link<L> link)` | Reference to a linked object |
+
+### Usage Examples
+
+```cs
+// Read a component
+ref var pos = ref entity.Ref<Position>();
+Console.WriteLine($"Entity at ({pos.X}, {pos.Y})");
+
+// Modify a component
+ref var health = ref entity.Ref<Health>();
+health.Value -= 10;
+health.LastDamageTime = DateTime.Now;
+
+// Modify struct fields directly
+entity.Ref<Position>().X += velocity.X * deltaTime;
+entity.Ref<Position>().Y += velocity.Y * deltaTime;
+```
+
+### With Relations
+```cs
+var target = world.Spawn();
+entity.Add(new Distance { Value = 100 }, target);
+
+// Get reference to relation component
+ref var dist = ref entity.Ref<Distance>(target);
+dist.Value -= 5;  // Getting closer!
+```
+
+### With Object Links
+```cs
+var gameObject = new GameObject("Player");
+entity.Add(Link.With(gameObject));
+
+// Get reference to the linked object itself
+ref var go = ref entity.Ref(Link.With(gameObject));
+go.SetActive(true);
+```
+
+::: warning :neofox_dizzy: Dangling References!
+The returned reference becomes invalid if the entity's archetype changes. Don't hold references across structural changes!
+```cs
+ref var health = ref entity.Ref<Health>();  // ✅ Valid
+entity.Add<Shield>();                        // Archetype changes!
+health.Value = 100;                          // ❌ Dangling reference!
+```
+**Rule of thumb:** Use the reference immediately, don't store it.
+:::
+
+## `Get<C>()` - Get Multiple Values :neofox_science:
+
+Returns an **array** of all matching component values. Useful with wildcards!
+
+### Method Signature
+
+| Signature | Description |
+|-----------|-------------|
+| `Entity.Get<C>(Match match)` | Array of all matching components |
+
+### Usage Examples
+
+```cs
+// Get all int relations
+var target1 = world.Spawn();
+var target2 = world.Spawn();
+
+entity.Add<int>(10, target1);
+entity.Add<int>(20, target2);
+
+int[] scores = entity.Get<int>(Entity.Any);
+// scores = [10, 20]
+
+// Get all linked GameObjects
+GameObject[] objects = entity.Get<GameObject>(Link.Any);
+```
+
+## `Components` Property - Get Everything :neofox_magnify:
+
+Returns all components on the entity as boxed values. Great for debugging and serialization!
+
+```cs
+IReadOnlyList<Component> components = entity.Components;
+
+foreach (var component in components)
+{
+    Console.WriteLine($"{component.Type.Name}: {component.Value}");
+}
+```
+
+::: info :neofox_think: About Boxing
+The `Components` property boxes all values each time it's called. That's fine for debugging, serialization, or occasional use—just don't call it every frame in a hot loop!
+:::
+
+## Comparison Table
+
+| Method | Returns | Use Case |
+|--------|---------|----------|
+| `Ref<C>()` | `ref C` | Read/write a single known component |
+| `Ref<C>(match)` | `ref C` | Read/write with specific match |
+| `Get<C>(match)` | `C[]` | Get all components matching expression |
+| `Components` | `IReadOnlyList<Component>` | Inspect all components (boxed) |
+| `Ensure<C>()` | `ref C` | Get or create component |
+
+## Safe Patterns
+
+### Check Before Access
+```cs
+if (entity.Has<Health>())
+{
+    ref var health = ref entity.Ref<Health>();
+    health.Value -= damage;
+}
+```
+
+### Use Ensure for Optional Components
+```cs
+// Don't check + add, just ensure!
+ref var counter = ref entity.Ensure<HitCount>();
+counter.Value++;
+```
+
+### Immediate Use Pattern
+```cs
+// ✅ Good - use reference immediately
+entity.Ref<Position>().X += 10;
+
+// ❌ Risky - storing reference
+ref var pos = ref entity.Ref<Position>();
+DoSomethingThatMightAddComponents(entity);  // Danger!
+pos.X += 10;  // Might be dangling
+```
+
+## Constraints
+
+- `C` must be `notnull`
+- Component must exist (throws `KeyNotFoundException` otherwise)
+- For `Link<L>`, `L` must be a reference type (`class`)
+- References are invalidated by structural changes
 
 
