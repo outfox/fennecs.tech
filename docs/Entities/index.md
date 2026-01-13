@@ -16,7 +16,7 @@ Entities are your actors, your game objects, your... well, *things*! They're lig
 
 ## What is an Entity?
 
-An `Entity` is a lightweight, immutable handle—technically a `readonly record struct`. It's just an identity paired with a reference to its World.
+An `Entity` is a lightweight, immutable handle – technically a `readonly record struct`. It's just an identity paired with a reference to its World.
 
 ```cs
 var player = world.Spawn();           // Create an entity
@@ -55,10 +55,10 @@ fox.Despawn();
 Console.WriteLine(fox.Alive); // false
 ```
 
-Each Entity knows if it is [alive](Liveness.md) inside a World. An Entity can only live in one World at a time—and it needs a World to be alive. *(don't we all!)*
+Each Entity knows if it is [alive](Liveness.md) inside a World. An Entity can only live in one World at a time – and it needs a World to be alive. *(don't we all!)*
 
 ::: info :neofox_science: Memory Efficient
-Despawned entities are recycled, so spawning and despawning is extremely cheap—even in large waves—without runaway memory consumption.
+Despawned entities are recycled, so spawning and despawning is extremely cheap – even in large waves – without runaway memory consumption.
 :::
 
 ## Composition :neofox_heart:
@@ -87,7 +87,7 @@ Entities can also serve as the *secondary key* in a [Relation](/docs/Keys/Relati
 
 ### Archetypes
 
-Entities with identical combinations of component [Type Expressions](/docs/Components/Expressions.md) share the same **Archetype**. This is how **fenn**ecs achieves blazing-fast iteration—entities with the same "shape" are stored together in contiguous memory.
+Entities with identical combinations of component [Type Expressions](/docs/Components/Expressions.md) share the same **Archetype**. This is how **fenn**ecs achieves blazing-fast iteration – entities with the same "shape" are stored together in contiguous memory.
 
 ::: warning :neofox_think: A Dead Entity Has No Components
 When an entity is despawned, all its components are removed. The entity handle becomes a stale reference to a recycled identity.
@@ -96,9 +96,9 @@ When an entity is despawned, all its components are removed. The entity handle b
 ## Internals
 
 ::: details :neofox_magnify: Tidbits for the Curious
-The defining property of an entity is its `Identity`—a 64-bit value combining an index and a generation counter. Paired with a specific [World](/docs/World.md), this gives us a unique handle to operate on.
+The defining property of an entity is its `Identity` – a 64-bit value combining an index and a generation counter. Paired with a specific [World](/docs/World.md), this gives us a unique handle to operate on.
 
-A dead Entity doesn't exist in any World—it's just stale data with a leftover `Identity` whose successor was already returned to the internal `IdentityPool`.
+A dead Entity doesn't exist in any World – it's just stale data with a leftover `Identity` whose successor was already returned to the internal `IdentityPool`.
 
 Living Entities occupy a slot in the world's storage structure:
 - A `Meta` entry in the world's Meta-Set (tracking archetype membership)

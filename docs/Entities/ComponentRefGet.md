@@ -7,18 +7,18 @@ outline: [1, 2]
 # Reading & Writing Components :neofox_peek:
 
 ::: warning :neofox_flop_blep: Consider Streams First!
-For bulk operations, [Streams](/docs/Streams/) are the way to go—they're faster and more ergonomic for processing many entities.
+For bulk operations, [Streams](/docs/Streams/) are the way to go – they're faster and more ergonomic for processing many entities.
 
 But for one-off access? `Ref` and `Get` are *perfect*. Don't overthink it! 💙
 :::
 
 ## When Direct Access Makes Sense
 
-- **UI event handlers** — User clicked a button, update the entity
-- **Serialization** — Save/load entity state
-- **Debugging** — Inspect values at runtime
-- **Tests** — Verify component values
-- **Initialization** — Set up entity after spawning
+- **UI event handlers**  –  User clicked a button, update the entity
+- **Serialization**  –  Save/load entity state
+- **Debugging**  –  Inspect values at runtime
+- **Tests**  –  Verify component values
+- **Initialization**  –  Set up entity after spawning
 
 ```cs
 // This is totally fine!
@@ -126,7 +126,7 @@ foreach (var component in components)
 ```
 
 ::: info :neofox_think: About Boxing
-The `Components` property boxes all values each time it's called. That's fine for debugging, serialization, or occasional use—just don't call it every frame in a hot loop!
+The `Components` property boxes all values each time it's called. That's fine for debugging, serialization, or occasional use – just don't call it every frame in a hot loop!
 :::
 
 ## Comparison Table

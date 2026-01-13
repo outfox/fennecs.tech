@@ -3,7 +3,7 @@ title: Exotics (WIP)
 
 head:
   - - meta
-    - name: fennecs — tiny ECS
+    - name: fennecs  –  tiny ECS
       content: Documentation
 
 ---

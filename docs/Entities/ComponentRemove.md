@@ -7,7 +7,7 @@ outline: [1, 2]
 # Removing Components :neofox_floof_sad_reach:
 
 ::: tip :neofox_thumbsup: Tidying Up
-Sometimes components need to go! Removing components is just as important as adding them—it's how entities change over time and respond to game events.
+Sometimes components need to go! Removing components is just as important as adding them – it's how entities change over time and respond to game events.
 :::
 
 ### :neofox_hug_haj: `Remove<C>(...)`
@@ -90,12 +90,12 @@ entity.Remove(Link.With(gameObject));
 
 When you remove a component:
 
-1. **The data is discarded** — The component value is gone (for value types) or dereferenced (for links)
-2. **Archetype changes** — The entity moves to a new archetype without that component type
-3. **Queries update** — The entity will no longer match queries requiring that component
+1. **The data is discarded**  –  The component value is gone (for value types) or dereferenced (for links)
+2. **Archetype changes**  –  The entity moves to a new archetype without that component type
+3. **Queries update**  –  The entity will no longer match queries requiring that component
 
 ::: info :neofox_think: Reference Types and Links
-For object links, removing the link doesn't destroy or dispose the linked object—it just removes the association. The object continues to exist in managed memory.
+For object links, removing the link doesn't destroy or dispose the linked object – it just removes the association. The object continues to exist in managed memory.
 :::
 
 ## Removing Multiple of Same Type
@@ -133,5 +133,5 @@ Console.WriteLine(entity.Has<int>(target2));  // true
 - For `Link<L>`, `L` must be a reference type (`class`)
 
 ::: tip :neofox_comfy: Structural Changes
-Removing a component is a **structural change**—it moves the entity to a new archetype. Inside [Stream](/docs/Streams/) runners, these are deferred until the runner completes.
+Removing a component is a **structural change** – it moves the entity to a new archetype. Inside [Stream](/docs/Streams/) runners, these are deferred until the runner completes.
 :::
