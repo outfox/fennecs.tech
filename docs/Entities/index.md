@@ -5,6 +5,8 @@ order: 3
 outline: [1, 2]
 ---
 
+# Entities
+
 ![fennecs in a box](/img/fennecs-512.png)
 *cuddly, lively, come in litters of `1,073,741,824`* :neofox_snuggle:
 
