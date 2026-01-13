@@ -27,7 +27,7 @@ Despawned Entities are recycled, so they are extremely cheap to spawn and proces
 Entities can have any number of [Components](/docs/Components/) attached to them. This is how the **fenn**ecs Entity-Component Systems provides composable, structured data semantics. 
 
 
-They can also serve as the `secondary key` in a [Relation](/docs/Keys/Relation.md)) between two Entities. 
+They can also serve as the `secondary key` in a [Relation](/docs/Keys/Relation.md) between two Entities. 
 
 Entities with the identical combinations of Component ==Type Expressions== share the same [Archetype](../Components/index.md#archetypes).
 
