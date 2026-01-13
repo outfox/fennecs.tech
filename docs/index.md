@@ -1,12 +1,12 @@
 ---
 layout: doc
 title: Documentation
+prev: false
 
 head:
   - - meta
     - name: description
       content: API documentation for fennecs, the tiny, tiny, high-energy Entity-Component System
-
 ---
 !["using fennecs;"](https://fennecs.net/img/using-fennecs-darkmode.svg){.dark-only}
 !["using fennecs;"](https://fennecs.net/img/using-fennecs-lightmode.svg){.light-only}
