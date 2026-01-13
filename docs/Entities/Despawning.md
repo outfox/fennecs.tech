@@ -34,7 +34,7 @@ When an entity is despawned:
 4. **The handle becomes stale** - The `Entity` struct still exists, but `Alive` returns `false`
 
 ::: warning :neofox_owo: The Handle Lives On (But Shouldn't Be Used)
-After despawning, you still have the `Entity` struct in your variable – it's just a value type. But it's now a "dead" reference. Attempting CRUD operations on it will throw.
+After despawning, you still have the `Entity` struct in your variable—it's just a value type. But it's now a "dead" reference. Attempting CRUD operations on it will throw.
 ```cs
 var fox = world.Spawn();
 fox.Despawn();

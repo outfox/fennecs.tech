@@ -140,5 +140,5 @@ Console.WriteLine(entity.Get<int>(Match.Any).Length);  // 3
 - For `Link<L>`, `L` must be a reference type (`class`)
 
 ::: tip :neofox_comfy: Structural Changes
-Adding a component is a **structural change** – it moves the entity to a new archetype. Inside [Stream](/docs/Streams/) runners, these are deferred until the runner completes.
+Adding a component is a **structural change**—it moves the entity to a new archetype. Inside [Stream](/docs/Streams/) runners, these are deferred until the runner completes.
 :::

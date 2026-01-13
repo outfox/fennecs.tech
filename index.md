@@ -1,7 +1,7 @@
 ---
 layout: home
 title: fennecs
-titleTemplate: :title  –  tiny ECS
+titleTemplate: :title — tiny ECS
 menu: Home
 order: 9000
 
@@ -36,7 +36,7 @@ features:
 head:
   - - meta
     - name: title
-      content: fennecs  –  tiny ECS
+      content: fennecs — tiny ECS
   - - meta
     - name: description
       content: A free, fast, foxy C# Entity-Component System for games and simulations!
@@ -48,7 +48,7 @@ head:
       content: https://fennecs.net
   - - meta
     - property: og:title
-      content: fennecs  –  tiny ECS
+      content: fennecs — tiny ECS
 
 ---
 
