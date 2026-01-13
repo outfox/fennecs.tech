@@ -9,7 +9,7 @@ outline: [1, 2]
 ::: warning :neofox_flop_blep: Usually Not Needed!
 In ECS-land, we prefer to let **Queries** do the filtering! A Query with `<Health, Position>` automatically gives you only entities that have both.
 
-But sometimes you *do* need to check manually—and that's okay!
+But sometimes you *do* need to check manually – and that's okay!
 :::
 
 ### `Has<C>(...)`
@@ -153,7 +153,7 @@ ref var health = ref entity.Ensure(new Health { Value = 100 });
 
 - `C` must be `notnull`
 - For `Link<L>`, `L` must be a reference type (`class`)
-- Returns `bool` only—cannot be chained
+- Returns `bool` only – cannot be chained
 
 ::: info :neofox_science: Performance Note
 `Has` performs a lookup in the entity's archetype signature. It's fast, but iterating a Query is faster when you need to process many entities with the same component requirements.

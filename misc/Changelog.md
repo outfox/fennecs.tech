@@ -6,7 +6,7 @@ outline: [2,2]
 head:
   - - meta
     - name: title
-      content: fennecs — Release Notes
+      content: fennecs  –  Release Notes
   - - meta
     - property: og:description
       content: Changelog for fennecs, the tiny, fast, modern C# Entity-Component System for games and simulations!
@@ -18,10 +18,10 @@ head:
       content: https://fennecs.net/misc/Changelog.html
   - - meta
     - property: og:title
-      content: fennecs — Release Notes
+      content: fennecs  –  Release Notes
   - - meta
     - name: twitter:title
-      content: fennecs — Release Notes
+      content: fennecs  –  Release Notes
   - - meta
     - property: og:image
       content: https://fennecs.net/img/fennecs-changelog-panel.png

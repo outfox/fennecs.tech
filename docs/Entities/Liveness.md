@@ -38,7 +38,7 @@ E-00000001:00001 -DEAD-
 
 ## Implicit Bool Conversion :neofox_heart:
 
-Entities can be used directly in boolean contexts—they implicitly convert to their `Alive` state:
+Entities can be used directly in boolean contexts – they implicitly convert to their `Alive` state:
 
 ```cs
 var entity = world.Spawn();
